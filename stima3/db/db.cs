@@ -32,64 +32,60 @@ class Db
     public static void Migrate()
     {
         // Create database if not exists & migrate schmea from schema.sql
-        using (MySqlConnection connection = GetConnection())
+        using MySqlConnection connection = GetConnection();
+        // Use transaction to rollback if error
+        MySqlTransaction transaction = connection.BeginTransaction();
+        MySqlCommand command = connection.CreateCommand();
+        command.Transaction = transaction;
+
+        // Read schema.sql
+        string schema = System.IO.File.ReadAllText("db/schema.sql");
+
+        // Execute schema.sql
+        try
         {
-            // Use transaction to rollback if error
-            MySqlTransaction transaction = connection.BeginTransaction();
-            MySqlCommand command = connection.CreateCommand();
-            command.Transaction = transaction;
-
-            // Read schema.sql
-            string schema = System.IO.File.ReadAllText("db/schema.sql");
-
-            // Execute schema.sql
-            try
-            {
-                command.CommandText = schema;
-                command.ExecuteNonQuery();
-                transaction.Commit();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                transaction.Rollback();
-            }
-            finally
-            {
-                CloseConnection();
-            }
+            command.CommandText = schema;
+            command.ExecuteNonQuery();
+            transaction.Commit();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            transaction.Rollback();
+        }
+        finally
+        {
+            CloseConnection();
         }
     }
 
     public static void LoadDump()
     {
         // Create database if not exists & migrate schmea from schema.sql
-        using (MySqlConnection connection = GetConnection())
+        using MySqlConnection connection = GetConnection();
+        // Use transaction to rollback if error
+        MySqlTransaction transaction = connection.BeginTransaction();
+        MySqlCommand command = connection.CreateCommand();
+        command.Transaction = transaction;
+
+        // Read schema.sql
+        string schema = System.IO.File.ReadAllText("db/seeded.sql");
+
+        // Execute schema.sql
+        try
         {
-            // Use transaction to rollback if error
-            MySqlTransaction transaction = connection.BeginTransaction();
-            MySqlCommand command = connection.CreateCommand();
-            command.Transaction = transaction;
-
-            // Read schema.sql
-            string schema = System.IO.File.ReadAllText("db/seeded.sql");
-
-            // Execute schema.sql
-            try
-            {
-                command.CommandText = schema;
-                command.ExecuteNonQuery();
-                transaction.Commit();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                transaction.Rollback();
-            }
-            finally
-            {
-                CloseConnection();
-            }
+            command.CommandText = schema;
+            command.ExecuteNonQuery();
+            transaction.Commit();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            transaction.Rollback();
+        }
+        finally
+        {
+            CloseConnection();
         }
     }
 
@@ -146,49 +142,47 @@ class Db
         }
 
         // Delete all data in database
-        using (MySqlConnection connection = GetConnection())
+        using MySqlConnection connection = GetConnection();
+        MySqlCommand command = connection.CreateCommand();
+        MySqlTransaction transaction = connection.BeginTransaction();
+        command.Transaction = transaction;
+
+        try
         {
-            MySqlCommand command = connection.CreateCommand();
-            MySqlTransaction transaction = connection.BeginTransaction();
-            command.Transaction = transaction;
+            // Delete previous biodata
+            command.CommandText = "DELETE FROM biodata";
+            command.ExecuteNonQuery();
 
-            try
+            // Delete previous sidik jari
+            command.CommandText = "DELETE FROM sidik_jari";
+            command.ExecuteNonQuery();
+
+            // Insert new biodata
+            foreach (User user in users)
             {
-                // Delete previous biodata
-                command.CommandText = "DELETE FROM biodata";
+                command.CommandText = $"INSERT INTO biodata (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) VALUES ('{user.GetNik()}', '{user.GetNama()}', '{user.GetTempatLahir()}', '{user.GetTanggalLahir()}', '{user.GetJenisKelamin()}', '{user.GetGolonganDarah()}', '{user.GetAlamat()}', '{user.GetAgama()}', '{user.GetStatusPerkawinan()}', '{user.GetPekerjaan()}', '{user.GetKewarganegaraan()}')";
                 command.ExecuteNonQuery();
+            }
 
-                // Delete previous sidik jari
-                command.CommandText = "DELETE FROM sidik_jari";
+            // Insert new sidik jari
+            foreach (Fingerprint fingerprint in fingerprints)
+            {
+                command.CommandText = $"INSERT INTO sidik_jari (nama, berkas_citra) VALUES ('{fingerprint.GetNama()}', '{fingerprint.GetPath()}')";
                 command.ExecuteNonQuery();
-
-                // Insert new biodata
-                foreach (User user in users)
-                {
-                    command.CommandText = $"INSERT INTO biodata (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) VALUES ('{user.GetNik()}', '{user.GetNama()}', '{user.GetTempatLahir()}', '{user.GetTanggalLahir()}', '{user.GetJenisKelamin()}', '{user.GetGolonganDarah()}', '{user.GetAlamat()}', '{user.GetAgama()}', '{user.GetStatusPerkawinan()}', '{user.GetPekerjaan()}', '{user.GetKewarganegaraan()}')";
-                    command.ExecuteNonQuery();
-                }
-
-                // Insert new sidik jari
-                foreach (Fingerprint fingerprint in fingerprints)
-                {
-                    command.CommandText = $"INSERT INTO sidik_jari (nama, berkas_citra) VALUES ('{fingerprint.GetNama()}', '{fingerprint.GetPath()}')";
-                    command.ExecuteNonQuery();
-                }
-
-                // Commit transaction
-                transaction.Commit();
             }
-            catch (Exception e)
-            {
-                // Rollback transaction if error
-                Console.WriteLine(e.Message);
-                transaction.Rollback();
-            }
-            finally
-            {
-                CloseConnection();
-            }
+
+            // Commit transaction
+            transaction.Commit();
+        }
+        catch (Exception e)
+        {
+            // Rollback transaction if error
+            Console.WriteLine(e.Message);
+            transaction.Rollback();
+        }
+        finally
+        {
+            CloseConnection();
         }
     }
 }
