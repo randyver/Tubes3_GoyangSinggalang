@@ -61,6 +61,38 @@ class Db
         }
     }
 
+    public static void LoadDump()
+    {
+        // Create database if not exists & migrate schmea from schema.sql
+        using (MySqlConnection connection = GetConnection())
+        {
+            // Use transaction to rollback if error
+            MySqlTransaction transaction = connection.BeginTransaction();
+            MySqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+
+            // Read schema.sql
+            string schema = System.IO.File.ReadAllText("db/seeded.sql");
+
+            // Execute schema.sql
+            try
+            {
+                command.CommandText = schema;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                transaction.Rollback();
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+    }
+
     public static void Seed()
     {
         // Generate
