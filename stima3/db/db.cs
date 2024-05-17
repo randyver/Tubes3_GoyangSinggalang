@@ -29,6 +29,38 @@ class Db
         }
     }
 
+    public static void Migrate()
+    {
+        // Create database if not exists & migrate schmea from schema.sql
+        using (MySqlConnection connection = GetConnection())
+        {
+            // Use transaction to rollback if error
+            MySqlTransaction transaction = connection.BeginTransaction();
+            MySqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+
+            // Read schema.sql
+            string schema = System.IO.File.ReadAllText("db/schema.sql");
+
+            // Execute schema.sql
+            try
+            {
+                command.CommandText = schema;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                transaction.Rollback();
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+    }
+
     public static void Seed()
     {
         // Generate
@@ -101,20 +133,6 @@ class Db
                 // Insert new biodata
                 foreach (User user in users)
                 {
-                    Console.WriteLine("---------------");
-                    Console.WriteLine(user.GetNik());
-                    Console.WriteLine(user.GetNama());
-                    Console.WriteLine(user.GetTempatLahir());
-                    Console.WriteLine(user.GetTanggalLahir());
-                    Console.WriteLine(user.GetJenisKelamin());
-                    Console.WriteLine(user.GetGolonganDarah());
-                    Console.WriteLine(user.GetAlamat());
-                    Console.WriteLine(user.GetAgama());
-                    Console.WriteLine(user.GetStatusPerkawinan());
-                    Console.WriteLine(user.GetPekerjaan());
-                    Console.WriteLine(user.GetKewarganegaraan());
-                    Console.WriteLine("---------------");
-
                     command.CommandText = $"INSERT INTO biodata (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) VALUES ('{user.GetNik()}', '{user.GetNama()}', '{user.GetTempatLahir()}', '{user.GetTanggalLahir()}', '{user.GetJenisKelamin()}', '{user.GetGolonganDarah()}', '{user.GetAlamat()}', '{user.GetAgama()}', '{user.GetStatusPerkawinan()}', '{user.GetPekerjaan()}', '{user.GetKewarganegaraan()}')";
                     command.ExecuteNonQuery();
                 }
