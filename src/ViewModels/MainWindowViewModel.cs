@@ -21,6 +21,7 @@ namespace src.ViewModels
         private string _matchRate = "0";
         private User? _user;
         private bool _error = false;
+        private bool _initial = true;
         private string _error_message = "No error occurred";
 
 
@@ -90,17 +91,40 @@ public string ExecutionTimeString
 
         public User UserStatus 
         {
-            set => this.RaiseAndSetIfChanged(ref _user, value);
+            set {
+                    this.RaiseAndSetIfChanged(ref _user, value);
+                    this.RaisePropertyChanged(nameof(userNIK));
+                    this.RaisePropertyChanged(nameof(userNama));
+                    this.RaisePropertyChanged(nameof(userTempatLahir));
+                    this.RaisePropertyChanged(nameof(userTanggalLahir));
+                    this.RaisePropertyChanged(nameof(userJenisKelamin));
+                    this.RaisePropertyChanged(nameof(userGolonganDarah));
+                    this.RaisePropertyChanged(nameof(userAlamat));
+                    this.RaisePropertyChanged(nameof(userAgama));
+                    this.RaisePropertyChanged(nameof(userStatusPerkawinan));
+                    this.RaisePropertyChanged(nameof(userPekerjaan));
+                    this.RaisePropertyChanged(nameof(userKewarganegaraan));
+            }
         }
 
         public string? userNIK
         {
-            get => _user?.GetNik();
+            get {
+                if (_initial) {
+                    return "";
+                }
+
+                if (_error) {
+                    return "Error occurred";
+                }
+                
+                return "NIK: " + _user?.GetNik();
+            }
         }
 
         public string? userNama
         {
-            get => _user?.GetNama();
+            get => "Nama: " + _user?.GetNama();
         }
 
         public string? userTempatLahir
@@ -167,27 +191,10 @@ public string ExecutionTimeString
                 this.RaisePropertyChanged(nameof(ResultColor));
                 this.RaisePropertyChanged(nameof(ExecutionTimeString));
                 this.RaisePropertyChanged(nameof(MatchRateString));
+                UserStatus = new User("", "", "", "", "", "", "", "", "", "", "");
             }
         }
 
-        public User user 
-        {
-            get => _user;
-            set {
-                this.RaiseAndSetIfChanged(ref _user, value);
-                this.RaisePropertyChanged(nameof(userNIK));
-                this.RaisePropertyChanged(nameof(userNama));
-                this.RaisePropertyChanged(nameof(userTempatLahir));
-                this.RaisePropertyChanged(nameof(userTanggalLahir));
-                this.RaisePropertyChanged(nameof(userJenisKelamin));
-                this.RaisePropertyChanged(nameof(userGolonganDarah));
-                this.RaisePropertyChanged(nameof(userAlamat));
-                this.RaisePropertyChanged(nameof(userAgama));
-                this.RaisePropertyChanged(nameof(userStatusPerkawinan));
-                this.RaisePropertyChanged(nameof(userPekerjaan));
-                this.RaisePropertyChanged(nameof(userKewarganegaraan));
-            }
-        }
 
 
 
@@ -226,6 +233,7 @@ public string ExecutionTimeString
                 // TODO: Implement search logic here 
                 // Assigned to: @randy
                 _error = false;
+                _initial = false;
 
                 // No image selected
                 if (SelectedImage == null)
@@ -250,6 +258,10 @@ public string ExecutionTimeString
                 Console.WriteLine("Execution time: " + ExecutionTime + " ms");
                 Console.WriteLine("Agama" + userAgama);
                 UserStatus = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", "01-01-2000", "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
+                
+
+
+                // Change the result image to the proper one!
                 ResultImage = SelectedImage;
             });
         }
