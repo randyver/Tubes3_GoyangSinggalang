@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using GUI.ViewModels;
-using GUI.Views;
+using src.ViewModels;
+using src.Views;
 
-namespace GUI;
+namespace src;
 
 public partial class App : Application
 {
