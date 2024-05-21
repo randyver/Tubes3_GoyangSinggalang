@@ -48,7 +48,7 @@
             <Image Source="{Binding SelectedImage}" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
         <Border Grid.Row="1" Grid.Column="1" Background="LightGray" Margin="10">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Sidik Jari Cocok"/>
+            <Image Source="{Binding ResultImage}" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
         <Border Grid.Row="1" Grid.Column="2" Background="LightGray" Margin="10">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="List Biodata"/>
@@ -62,21 +62,13 @@
                 <ToggleSwitch HorizontalAlignment="Center" IsChecked="{Binding IsKMPChecked}" Margin="5" OnContent="" OffContent=""/>
                 <TextBlock Text="BM" Margin="5" VerticalAlignment="Center"/>
             </StackPanel>
-            <Button Content="Search"/>
+            <Button Content="Search" Command = "{Binding SearchCommand}"/>
         </StackPanel>
 
         <!-- Search Time and Percentage -->
         <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-            <StackPanel Margin="5" Orientation ="Horizontal" >
-                <Label Content="Waktu Pencarian : "/>
-                <Label Content="{Binding ExecutionTime}"/>
-                <Label Content=" ms"/>
-            </StackPanel>
-            <StackPanel Margin="5" Orientation ="Horizontal" >
-                <Label Content="Persentase Kemiripan : "/>
-                <Label Content="{Binding MatchRate}"/>
-                <Label Content=" %"/>
-            </StackPanel>
+            <Label Content="{Binding ExecutionTimeString}"/>
+            <Label Content="{Binding MatchRateString}"/>
         </StackPanel>
     </Grid>
 </Window>

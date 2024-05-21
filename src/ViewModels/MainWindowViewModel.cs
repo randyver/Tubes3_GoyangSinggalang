@@ -20,6 +20,8 @@ namespace src.ViewModels
         private string _time = "0";
         private string _matchRate = "0";
         private User? _user;
+        private bool _error = false;
+        private string _error_message = "No error occurred";
 
 
         public bool IsKMPChecked
@@ -46,16 +48,44 @@ namespace src.ViewModels
             set => this.RaiseAndSetIfChanged(ref _resultImage, value);
         }
 
-        public string ExecutionTime 
+public string ExecutionTimeString 
+        {
+            get {
+                if (_error) {
+                    return "Error occurred";
+                }
+                return "Execution time: " + ExecutionTime + " ms";
+            }
+        }
+
+        public string ExecutionTime
         {
             get => _time;
-            set => this.RaiseAndSetIfChanged(ref _time, value);
+            set {
+                this.RaiseAndSetIfChanged(ref _time, value);
+                this.RaisePropertyChanged(nameof(ExecutionTimeString));
+            }
+        }
+
+        public string MatchRateString
+        {
+            get
+            {
+                if (_error)
+                {
+                    return _error_message;
+                }
+                return "Match rate: " + MatchRate + "%";
+            }
         }
 
         public string MatchRate
         {
             get => _matchRate;
-            set => this.RaiseAndSetIfChanged(ref _matchRate, value);
+            set {
+                this.RaiseAndSetIfChanged(ref _matchRate, value);
+                this.RaisePropertyChanged(nameof(MatchRateString));
+            }
         }
 
         public User user 
@@ -120,6 +150,8 @@ namespace src.ViewModels
 
 
         public ReactiveCommand<Unit, Unit> OpenFileCommand { get; }
+        public ReactiveCommand<Unit, Unit> SearchCommand { get; }
+
 
         public MainWindowViewModel()
         {
@@ -144,6 +176,42 @@ namespace src.ViewModels
                     var filePath = result.First().Path.LocalPath;
                     SelectedImage = new Bitmap(filePath);
                 }
+            });
+
+
+            SearchCommand = ReactiveCommand.Create(() =>
+            {
+                // TODO: Implement search logic here 
+                // Assigned to: @randy
+
+                // No image selected
+                if (SelectedImage == null)
+                {
+                    _error = true;
+                    _error_message = "No image selected";
+                    this.RaisePropertyChanged(nameof(MatchRateString));
+                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                    return;
+                }
+
+                // Image selected but format not supported
+                if (SelectedImage.PixelSize.Width == 0)
+                {
+                    _error = true;
+                    _error_message = "Unsupported image format";
+                    this.RaisePropertyChanged(nameof(MatchRateString));
+                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                    return;
+                }
+                
+                // OK!
+                ExecutionTime = "123";
+                MatchRate = "95";   
+                Console.WriteLine("Search command executed");
+                Console.WriteLine("Execution time: " + ExecutionTime + " ms");
+                Console.WriteLine("Agama" + userAgama);
+                _user = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", "01-01-2000", "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
+                ResultImage = SelectedImage;
             });
         }
     }
