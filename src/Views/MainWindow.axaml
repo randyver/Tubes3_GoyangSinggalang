@@ -69,10 +69,14 @@
         <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
             <StackPanel Margin="5" Orientation ="Horizontal" >
                 <Label Content="Waktu Pencarian : "/>
-                <Label Content="{Binding SearchTime}"/>
+                <Label Content="{Binding ExecutionTime}"/>
                 <Label Content=" ms"/>
             </StackPanel>
-            <TextBlock Text="Persentase Kecocokkan : xx%" Margin="5"/>
+            <StackPanel Margin="5" Orientation ="Horizontal" >
+                <Label Content="Persentase Kemiripan : "/>
+                <Label Content="{Binding MatchRate}"/>
+                <Label Content=" %"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
