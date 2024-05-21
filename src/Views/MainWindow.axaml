@@ -67,8 +67,8 @@
 
         <!-- Search Time and Percentage -->
         <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-            <Label Content="{Binding ExecutionTimeString}"/>
-            <Label Content="{Binding MatchRateString}"/>
+            <Label Foreground = "{Binding ResultColor}" Content="{Binding ExecutionTimeString}"/>
+            <Label Foreground = "{Binding ResultColor}" Content="{Binding MatchRateString}"/>
         </StackPanel>
     </Grid>
 </Window>

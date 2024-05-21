@@ -88,7 +88,7 @@ public string ExecutionTimeString
             }
         }
 
-        public User user 
+        public User UserStatus 
         {
             set => this.RaiseAndSetIfChanged(ref _user, value);
         }
@@ -148,6 +148,48 @@ public string ExecutionTimeString
             get => _user.GetKewarganegaraan();
         }
 
+        public string ResultColor 
+        {
+            get {
+                if (_error)
+                {
+                    return "Red";
+                }
+                return "Green";
+            }
+        }
+
+        public string ErrorMessage 
+        {
+            get => _error_message;
+            set {
+                this.RaiseAndSetIfChanged(ref _error_message, value);
+                this.RaisePropertyChanged(nameof(ResultColor));
+                this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                this.RaisePropertyChanged(nameof(MatchRateString));
+            }
+        }
+
+        public User user 
+        {
+            get => _user;
+            set {
+                this.RaiseAndSetIfChanged(ref _user, value);
+                this.RaisePropertyChanged(nameof(userNIK));
+                this.RaisePropertyChanged(nameof(userNama));
+                this.RaisePropertyChanged(nameof(userTempatLahir));
+                this.RaisePropertyChanged(nameof(userTanggalLahir));
+                this.RaisePropertyChanged(nameof(userJenisKelamin));
+                this.RaisePropertyChanged(nameof(userGolonganDarah));
+                this.RaisePropertyChanged(nameof(userAlamat));
+                this.RaisePropertyChanged(nameof(userAgama));
+                this.RaisePropertyChanged(nameof(userStatusPerkawinan));
+                this.RaisePropertyChanged(nameof(userPekerjaan));
+                this.RaisePropertyChanged(nameof(userKewarganegaraan));
+            }
+        }
+
+
 
         public ReactiveCommand<Unit, Unit> OpenFileCommand { get; }
         public ReactiveCommand<Unit, Unit> SearchCommand { get; }
@@ -183,14 +225,13 @@ public string ExecutionTimeString
             {
                 // TODO: Implement search logic here 
                 // Assigned to: @randy
+                _error = false;
 
                 // No image selected
                 if (SelectedImage == null)
                 {
                     _error = true;
-                    _error_message = "No image selected";
-                    this.RaisePropertyChanged(nameof(MatchRateString));
-                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                    ErrorMessage = "No image selected";
                     return;
                 }
 
@@ -198,9 +239,7 @@ public string ExecutionTimeString
                 if (SelectedImage.PixelSize.Width == 0)
                 {
                     _error = true;
-                    _error_message = "Unsupported image format";
-                    this.RaisePropertyChanged(nameof(MatchRateString));
-                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                    ErrorMessage = "Unsupported image format";
                     return;
                 }
                 
@@ -210,7 +249,7 @@ public string ExecutionTimeString
                 Console.WriteLine("Search command executed");
                 Console.WriteLine("Execution time: " + ExecutionTime + " ms");
                 Console.WriteLine("Agama" + userAgama);
-                _user = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", "01-01-2000", "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
+                UserStatus = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", "01-01-2000", "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
                 ResultImage = SelectedImage;
             });
         }
