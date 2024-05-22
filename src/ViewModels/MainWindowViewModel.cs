@@ -29,14 +29,15 @@ namespace src.ViewModels
         public bool IsKMPChecked
         {
             get => _isKMPChecked;
-            set {
-                string bahasaAlay = Models.Utils.GetBahasaAlay("Dewantoro Triatmojo");
+            set
+            {
+                string bahasaAlay = Lib.Utils.GetBahasaAlay("Dewantoro Triatmojo");
                 bahasaAlay = "l3Br0n J4m3s";
                 Console.WriteLine("Before change, KMP: " + _isKMPChecked);
-                string regex = @Utils.GetRegex(bahasaAlay);
+                string regex = Lib.Utils.GetRegex(bahasaAlay);
                 Console.WriteLine(bahasaAlay);
                 Console.WriteLine(regex);
-                 
+
                 Match match = Regex.Match("Lebron James", regex);
                 Console.WriteLine("Match? " + match.Success);
 
@@ -49,7 +50,8 @@ namespace src.ViewModels
         public Bitmap? SelectedImage
         {
             get => _selectedImage;
-            set {
+            set
+            {
                 this.RaiseAndSetIfChanged(ref _selectedImage, value);
             }
         }
@@ -60,10 +62,12 @@ namespace src.ViewModels
             set => this.RaiseAndSetIfChanged(ref _resultImage, value);
         }
 
-    public string ExecutionTimeString 
+        public string ExecutionTimeString
         {
-            get {
-                if (_error) {
+            get
+            {
+                if (_error)
+                {
                     return "Error occurred";
                 }
                 return "Execution time: " + ExecutionTime + " ms";
@@ -73,7 +77,8 @@ namespace src.ViewModels
         public string ExecutionTime
         {
             get => _time;
-            set {
+            set
+            {
                 this.RaiseAndSetIfChanged(ref _time, value);
                 this.RaisePropertyChanged(nameof(ExecutionTimeString));
             }
@@ -94,41 +99,46 @@ namespace src.ViewModels
         public string MatchRate
         {
             get => _matchRate;
-            set {
+            set
+            {
                 this.RaiseAndSetIfChanged(ref _matchRate, value);
                 this.RaisePropertyChanged(nameof(MatchRateString));
             }
         }
 
-        public User UserStatus 
+        public User UserStatus
         {
-            set {
-                    this.RaiseAndSetIfChanged(ref _user, value);
-                    this.RaisePropertyChanged(nameof(userNIK));
-                    this.RaisePropertyChanged(nameof(userNama));
-                    this.RaisePropertyChanged(nameof(userTempatLahir));
-                    this.RaisePropertyChanged(nameof(userTanggalLahir));
-                    this.RaisePropertyChanged(nameof(userJenisKelamin));
-                    this.RaisePropertyChanged(nameof(userGolonganDarah));
-                    this.RaisePropertyChanged(nameof(userAlamat));
-                    this.RaisePropertyChanged(nameof(userAgama));
-                    this.RaisePropertyChanged(nameof(userStatusPerkawinan));
-                    this.RaisePropertyChanged(nameof(userPekerjaan));
-                    this.RaisePropertyChanged(nameof(userKewarganegaraan));
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _user, value);
+                this.RaisePropertyChanged(nameof(userNIK));
+                this.RaisePropertyChanged(nameof(userNama));
+                this.RaisePropertyChanged(nameof(userTempatLahir));
+                this.RaisePropertyChanged(nameof(userTanggalLahir));
+                this.RaisePropertyChanged(nameof(userJenisKelamin));
+                this.RaisePropertyChanged(nameof(userGolonganDarah));
+                this.RaisePropertyChanged(nameof(userAlamat));
+                this.RaisePropertyChanged(nameof(userAgama));
+                this.RaisePropertyChanged(nameof(userStatusPerkawinan));
+                this.RaisePropertyChanged(nameof(userPekerjaan));
+                this.RaisePropertyChanged(nameof(userKewarganegaraan));
             }
         }
 
         public string? userNIK
         {
-            get {
-                if (_initial) {
+            get
+            {
+                if (_initial)
+                {
                     return "";
                 }
 
-                if (_error) {
+                if (_error)
+                {
                     return "Error occurred";
                 }
-                
+
                 return "NIK: " + _user?.GetNik();
             }
         }
@@ -183,9 +193,10 @@ namespace src.ViewModels
             get => _user.GetKewarganegaraan();
         }
 
-        public string ResultColor 
+        public string ResultColor
         {
-            get {
+            get
+            {
                 if (_error)
                 {
                     return "Red";
@@ -194,10 +205,11 @@ namespace src.ViewModels
             }
         }
 
-        public string ErrorMessage 
+        public string ErrorMessage
         {
             get => _error_message;
-            set {
+            set
+            {
                 this.RaiseAndSetIfChanged(ref _error_message, value);
                 this.RaisePropertyChanged(nameof(ResultColor));
                 this.RaisePropertyChanged(nameof(ExecutionTimeString));
@@ -261,15 +273,15 @@ namespace src.ViewModels
                     ErrorMessage = "Unsupported image format";
                     return;
                 }
-                
+
                 // OK!
                 ExecutionTime = "123";
-                MatchRate = "95";   
+                MatchRate = "95";
                 Console.WriteLine("Search command executed");
                 Console.WriteLine("Execution time: " + ExecutionTime + " ms");
                 Console.WriteLine("Agama" + userAgama);
                 UserStatus = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", "01-01-2000", "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
-                
+
 
 
                 // Change the result image to the proper one!

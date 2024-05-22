@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Models {
+namespace Lib
+{
     public class Utils
     {
         public static string GetBahasaAlay(string inputString)
@@ -74,24 +75,29 @@ namespace Models {
             return "aiueo".Contains(c.ToString().ToLower()) ? "vowel" : "consonant";
         }
 
-        public static string GetRegex(string bahasaAlay) {
+        public static string GetRegex(string bahasaAlay)
+        {
             string ZeroOrMoreVowel = "[aiueoAIUEO]*";
 
             string ret = "";
-            for (int i = 0; i < bahasaAlay.Length; i++) {
+            for (int i = 0; i < bahasaAlay.Length; i++)
+            {
                 ret += ZeroOrMoreVowel + GetRegexForCurrentChar(bahasaAlay[i]);
             }
-            if (bahasaAlay[bahasaAlay.Length - 1] != ' ') {
+            if (bahasaAlay[bahasaAlay.Length - 1] != ' ')
+            {
                 ret += ZeroOrMoreVowel;
             }
 
             return ret;
         }
 
-        public static string GetRegexForCurrentChar(char c) {
-            if (c == ' ') {
+        public static string GetRegexForCurrentChar(char c)
+        {
+            if (c == ' ')
+            {
                 return "[ ]";
-            } 
+            }
 
             Dictionary<char, string> number = new()
             {
@@ -107,6 +113,6 @@ namespace Models {
 
             return "[" + c.ToString().ToLower() + c.ToString().ToUpper() + addt + "]";
         }
-            
+
     }
 }

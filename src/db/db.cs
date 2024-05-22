@@ -6,7 +6,8 @@ using MySql.Data.MySqlClient;
 using Bogus;
 using Models;
 
-namespace Models {
+namespace Db
+{
     public class Db
     {
         private static MySqlConnection? connection;
@@ -130,7 +131,7 @@ namespace Models {
             {
                 // 50 50 chance data to be corrupted in biodata (alay name)
                 bool shouldAlay = new Random().Next(0, 2) == 0;
-                string nama = shouldAlay ? Models.Utils.GetBahasaAlay(names[i]).Replace("'", @"\'") : names[i].Replace("'", @"\'");
+                string nama = shouldAlay ? Lib.Utils.GetBahasaAlay(names[i]).Replace("'", @"\'") : names[i].Replace("'", @"\'");
 
                 string nik = (i + 1).ToString();
                 string tempatLahir = new Faker().Address.City().Replace("'", @"\'");

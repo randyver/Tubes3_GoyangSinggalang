@@ -2,6 +2,7 @@
 using Avalonia.ReactiveUI;
 using System;
 
+
 namespace src;
 
 sealed class Program
@@ -10,8 +11,37 @@ sealed class Program
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
     // yet and stuff might break.
     [STAThread]
-    public static void Main(string[] args) => BuildAvaloniaApp()
-        .StartWithClassicDesktopLifetime(args);
+    public static void Main(string[] args)
+    {
+        if (args.Length > 0 && args[0] == "--migrate")
+        {
+            // Migrate the database
+            Db.Db.Migrate();
+            return;
+        }
+        else if (args.Length > 0 && args[0] == "--seed")
+        {
+            // Run the seed
+            Db.Db.Seed();
+            return;
+        }
+        else if (args.Length > 0 && args[0] == "--load-dump")
+        {
+            // Run the test
+            Db.Db.LoadDump();
+            return;
+        }
+        else if (args.Length > 0 && args[0] == "--cli")
+        {
+            // Only for test cli program
+            Cli.Cli.Run();
+            return;
+        }
+        else
+        {
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+        }
+    }
 
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
