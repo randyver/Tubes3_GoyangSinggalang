@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Bogus;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
-namespace controllers
+namespace Controllers
 {
     // Uses KMP or BM Algorithm to find perfect match
     // Uses Hamming Distance to find similarity
@@ -12,10 +13,10 @@ namespace controllers
     {
         // Input data
         // finger print
-        private string inputImagePath = inputImagePath;
+        private readonly string inputImagePath = inputImagePath;
 
         // is kmp
-        private bool isKmp = isKmp;
+        private readonly bool isKmp = isKmp;
 
         // Output data
         // User data
@@ -24,11 +25,11 @@ namespace controllers
         private Models.Fingerprint? fingerPrintData;
         // similarity
         private double? similarity;
-        // time
-        private double? time;
+        // duration
+        private double? duration;
 
         // Use LCS to find similarity
-        private double LcsSolver(string s1, string s2)
+        private static double LcsSolver(string s1, string s2)
         {
             // Get length of both strings
             int n = s1.Length;
@@ -72,7 +73,7 @@ namespace controllers
         }
 
         // KMP Solver
-        private bool KmpSolver(string text, string pattern)
+        private static bool KmpSolver(string text, string pattern)
         {
             // Get length of both strings
             int n = text.Length;
@@ -139,7 +140,7 @@ namespace controllers
         }
 
         // BM Solver
-        private bool BmSolver(string text, string pattern)
+        private static bool BmSolver(string text, string pattern)
         {
             // Get length of both strings
             int n = text.Length;
@@ -202,14 +203,163 @@ namespace controllers
         // Solver
         public void Solve()
         {
+            // Start calculation duration
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            // Get all fingerprints
+            List<Models.Fingerprint> allFingerprints = Controllers.Fingerprint.GetFingerprints();
+
+            // Get input image
+            Image<Rgba32> inputImage = Image.Load<Rgba32>(inputImagePath);
+            Image<Rgba32> inputCroppedImage = Lib.ImageConverter.GetCenteredImage(inputImage, 32);
+
+            // Convert to ascii 8 bit
+            string inputCroppedImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(inputCroppedImage);
+
+            // Iterate through all fingerprints
+            bool isMatch = false;
+            Models.Fingerprint? bestFingerprint = null;
+            double bestSimilarity = 0;
+            // Solve for KMP
             if (isKmp)
             {
-                KmpSolver();
+                foreach (Models.Fingerprint fingerprint in allFingerprints)
+                {
+                    // Get fingerprint image
+                    Image<Rgba32> fingerPrintImage = Image.Load<Rgba32>(fingerprint.GetPath());
+
+                    // Convert to ascii 8 bit
+                    string fingerPrintImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(fingerPrintImage);
+
+                    // Input string as pattern
+                    // Finger print string as text
+                    isMatch = KmpSolver(fingerPrintImageAsciiString, inputCroppedImageAsciiString);
+                    if (isMatch)
+                    {
+                        // Save fingerprint (contains name & path)
+                        bestFingerprint = fingerprint;
+
+                        // Also calculate bestSimilarity
+                        Image<Rgba32> fingerPrintCroppedImage = Lib.ImageConverter.GetCenteredImage(fingerPrintImage, 32);
+                        string fingerPrintCroppedImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(fingerPrintCroppedImage);
+                        bestSimilarity = LcsSolver(fingerPrintCroppedImageAsciiString, inputCroppedImageAsciiString);
+
+                        break;
+                    }
+                }
             }
+            // Solve for BM
             else
             {
-                BmSolver();
+                foreach (Models.Fingerprint fingerprint in allFingerprints)
+                {
+                    // Get fingerprint image
+                    Image<Rgba32> fingerPrintImage = Image.Load<Rgba32>(fingerprint.GetPath());
+
+                    // Convert to ascii 8 bit
+                    string fingerPrintImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(fingerPrintImage);
+
+                    // Input string as pattern
+                    // Finger print string as text
+                    isMatch = BmSolver(fingerPrintImageAsciiString, inputCroppedImageAsciiString);
+                    if (isMatch)
+                    {
+                        // Save fingerprint (contains name & path)
+                        bestFingerprint = fingerprint;
+
+                        // Also calculate bestSimilarity
+                        Image<Rgba32> fingerPrintCroppedImage = Lib.ImageConverter.GetCenteredImage(fingerPrintImage, 32);
+                        string fingerPrintCroppedImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(fingerPrintCroppedImage);
+                        bestSimilarity = LcsSolver(fingerPrintCroppedImageAsciiString, inputCroppedImageAsciiString);
+
+                        break;
+                    }
+                }
             }
+
+            // If no match is found using KMP or BM, use LCS to get best match
+            double SIMILARITY_LIMIT = 0.6;
+            if (!isMatch)
+            {
+                foreach (Models.Fingerprint fingerprint in allFingerprints)
+                {
+                    // Get fingerprint image
+                    Image<Rgba32> fingerPrintImage = Image.Load<Rgba32>(fingerprint.GetPath());
+                    Image<Rgba32> fingerPrintCroppedImage = Lib.ImageConverter.GetCenteredImage(fingerPrintImage, 32);
+
+                    // Convert to ascii 8 bit
+                    string fingerPrintCroppedImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(fingerPrintCroppedImage);
+
+                    // Get similarity
+                    double tempSimilarity = LcsSolver(fingerPrintCroppedImageAsciiString, inputCroppedImageAsciiString);
+                    if (tempSimilarity > bestSimilarity && tempSimilarity > SIMILARITY_LIMIT)
+                    {
+                        // Save name & similarity
+                        isMatch = true;
+                        bestSimilarity = tempSimilarity;
+                        bestFingerprint = fingerprint;
+                    }
+                }
+            }
+
+            // No solution found (KMP/BM or LCM)
+            if (!isMatch || bestFingerprint == null)
+            {
+                userData = null;
+                fingerPrintData = null;
+                similarity = 0;
+                duration = 0;
+                return;
+            }
+
+            // Solution found
+            // Time
+            watch.Stop();
+            duration = watch.ElapsedMilliseconds;
+
+            // similarity
+            similarity = bestSimilarity;
+
+            // Fingerprint data
+            fingerPrintData = bestFingerprint;
+
+            // Get all user data
+            List<Models.User> allUsers = Controllers.User.GetUsers();
+
+            // Get user data
+            foreach (Models.User user in allUsers)
+            {
+                // Handle bahasa alay
+                string regexName = Lib.Utils.GetRegex(user.GetNama());
+
+                // Check if name is in fingerprint name
+                if (System.Text.RegularExpressions.Regex.IsMatch(bestFingerprint.GetNama(), regexName))
+                {
+                    userData = user;
+                    break;
+                }
+            }
+        }
+
+        // Getters
+        public double? GetDuration()
+        {
+            return duration;
+        }
+
+        public double? GetSimilarity()
+        {
+            return similarity;
+        }
+
+        public Models.User? GetUserData()
+        {
+            return userData;
+        }
+
+        public Models.Fingerprint? GetFingerPrintData()
+        {
+            return fingerPrintData;
         }
     }
 }
