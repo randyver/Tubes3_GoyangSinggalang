@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-
-namespace Models {
+namespace Models
+{
     public class Fingerprint(string nama, string path)
     {
         // Attributes
