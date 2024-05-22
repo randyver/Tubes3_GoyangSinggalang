@@ -8,6 +8,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Media.Imaging;
 using ReactiveUI;
 using Models;
+using System.Text.RegularExpressions;
 
 
 namespace src.ViewModels
@@ -29,7 +30,17 @@ namespace src.ViewModels
         {
             get => _isKMPChecked;
             set {
-                Console.WriteLine(Models.Utils.GetBahasaAlay("Dewantoro Triatmojo"));
+                string bahasaAlay = Models.Utils.GetBahasaAlay("Dewantoro Triatmojo");
+                bahasaAlay = "l3Br0n J4m3s";
+                Console.WriteLine("Before change, KMP: " + _isKMPChecked);
+                string regex = @Utils.GetRegex(bahasaAlay);
+                Console.WriteLine(bahasaAlay);
+                Console.WriteLine(regex);
+                 
+                Match match = Regex.Match("Lebron James", regex);
+                Console.WriteLine("Match? " + match.Success);
+
+
                 this.RaiseAndSetIfChanged(ref _isKMPChecked, value);
                 Console.WriteLine("After change, KMP: " + value);
             }
@@ -49,7 +60,7 @@ namespace src.ViewModels
             set => this.RaiseAndSetIfChanged(ref _resultImage, value);
         }
 
-public string ExecutionTimeString 
+    public string ExecutionTimeString 
         {
             get {
                 if (_error) {

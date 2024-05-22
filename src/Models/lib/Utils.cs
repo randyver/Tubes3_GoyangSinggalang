@@ -68,5 +68,45 @@ namespace Models {
 
             return res;
         }
+
+        public static string IsVowel(char c)
+        {
+            return "aiueo".Contains(c.ToString().ToLower()) ? "vowel" : "consonant";
+        }
+
+        public static string GetRegex(string bahasaAlay) {
+            string ZeroOrMoreVowel = "[aiueoAIUEO]*";
+
+            string ret = "";
+            for (int i = 0; i < bahasaAlay.Length; i++) {
+                ret += ZeroOrMoreVowel + GetRegexForCurrentChar(bahasaAlay[i]);
+            }
+            if (bahasaAlay[bahasaAlay.Length - 1] != ' ') {
+                ret += ZeroOrMoreVowel;
+            }
+
+            return ret;
+        }
+
+        public static string GetRegexForCurrentChar(char c) {
+            if (c == ' ') {
+                return "[ ]";
+            } 
+
+            Dictionary<char, string> number = new()
+            {
+                { '4', "Aa" },
+                { '1', "iIlL" },
+                { '3', "Ee" },
+                { '0', "Oo" },
+                { '5', "Ss" },
+                { '6', "Gg" },
+            };
+
+            string addt = number.ContainsKey(c) ? number[c].ToString() : "";
+
+            return "[" + c.ToString().ToLower() + c.ToString().ToUpper() + addt + "]";
+        }
+            
     }
 }
