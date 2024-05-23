@@ -98,13 +98,13 @@ namespace Db
         public static void Seed()
         {
             // Generate
-            string testImagesPath = "../test/";
+            string testImagesPath = "../test/real/";
 
             // Get all files in test/ folder
             // Contains 6000 images where each person has 10 fingerprint images (from each fingers)
-            // Save relative path from src (which is ../tests/<FILENAME>.BMP)
+            // Save relative path from src (which is ../test/real/<FILENAME>.BMP)
             // Need to sort based on file name to make sure the order is correct
-            List<string> filesDirectories = new(Directory.GetFiles(testImagesPath).OrderBy(path => Convert.ToInt32(path.Split("../test/")[1].Split("__")[0])));
+            List<string> filesDirectories = new(Directory.GetFiles(testImagesPath).OrderBy(path => Convert.ToInt32(path.Split("../test/real/")[1].Split("__")[0])));
             // Generate 600 names
             List<string> names = [];
             for (int i = 0; i < 600; i++)

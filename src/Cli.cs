@@ -35,7 +35,7 @@ namespace Cli
             // Test controller
             // Controllers.Solver solver = new("../temp/315650.jpg", false);
             // Controllers.Solver solver = new("../test/4__M_Left_index_finger.BMP", true);
-            Controllers.Solver solver = new("../temp/1__M_Left_index_finger_CR.BMP", true);
+            Controllers.Solver solver = new("../test/altered-easy/1__M_Left_index_finger_CR.BMP", true);
 
             // Solve
             solver.Solve();
