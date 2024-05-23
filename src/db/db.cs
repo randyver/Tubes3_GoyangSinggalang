@@ -4,6 +4,7 @@ using System.IO;
 using MySql.Data.MySqlClient;
 using Bogus;
 using Models;
+using System.Linq;
 
 namespace Db
 {
@@ -102,8 +103,8 @@ namespace Db
             // Get all files in test/ folder
             // Contains 6000 images where each person has 10 fingerprint images (from each fingers)
             // Save relative path from src (which is ../tests/<FILENAME>.BMP)
-            string[] filesDirectories = Directory.GetFiles(testImagesPath);
-
+            // Need to sort based on file name to make sure the order is correct
+            List<string> filesDirectories = new(Directory.GetFiles(testImagesPath).OrderBy(path => Convert.ToInt32(path.Split("../test/")[1].Split("__")[0])));
             // Generate 600 names
             List<string> names = [];
             for (int i = 0; i < 600; i++)
@@ -113,7 +114,7 @@ namespace Db
 
             // Generate 6000 fingerprints
             List<Fingerprint> fingerprints = [];
-            for (int i = 0; i < filesDirectories.Length; i++)
+            for (int i = 0; i < filesDirectories.Count; i++)
             {
                 string nama = names[i / 10].Replace("'", @"\'");
                 string path = filesDirectories[i].Replace("'", @"\'");

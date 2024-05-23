@@ -34,7 +34,8 @@ sealed class Program
         else if (args.Length > 0 && args[0] == "--cli")
         {
             // Only for test cli program
-            Cli.Cli.Run();
+            // Cli.Cli.RunRegex();
+            Cli.Cli.RunSolve();
             return;
         }
         else

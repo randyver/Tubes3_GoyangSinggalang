@@ -57,14 +57,14 @@ namespace Controllers
         }
 
         // Get user by name using regex
-        public static List<Models.User> GetUser(string nama)
+        public static Models.User? GetUser(string nama)
         {
             // Get connection
             using MySqlConnection connection = Db.Db.GetConnection();
 
             // Query
-            string query = "SELECT * FROM biodata WHERE nama REGEXP @nama";
-            List<Models.User> users = [];
+            string query = "SELECT * FROM biodata WHERE nama REGEXP @nama LIMIT 1";
+            Models.User? user = null;
 
             // Execute query
             try
@@ -77,7 +77,7 @@ namespace Controllers
                 // Parse
                 while (reader.Read())
                 {
-                    Models.User user = new(
+                    Models.User newUser = new(
                         reader.GetString("NIK"),
                         reader.GetString("nama"),
                         reader.GetString("tempat_lahir"),
@@ -91,7 +91,7 @@ namespace Controllers
                         reader.GetString("kewarganegaraan")
                     );
 
-                    users.Add(user);
+                    user = newUser;
                 }
             }
             catch (MySqlException e)
@@ -104,7 +104,7 @@ namespace Controllers
             }
 
             // Return
-            return users;
+            return user;
         }
     }
 }

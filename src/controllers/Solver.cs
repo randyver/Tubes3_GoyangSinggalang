@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Bogus;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
@@ -333,11 +332,14 @@ namespace Controllers
             // Get user data
             foreach (Models.User user in allUsers)
             {
-                // Handle bahasa alay
-                string regexName = Lib.Utils.GetRegex(user.GetNama());
+                // Get regex
+                string regex = Lib.Utils.GetRegex(user.GetNama());
 
                 // Check if name is in fingerprint name
-                if (System.Text.RegularExpressions.Regex.IsMatch(bestFingerprint.GetNama(), regexName))
+                if (
+                    user.GetNama() == bestFingerprint.GetNama() || // Handle exact match
+                    System.Text.RegularExpressions.Regex.IsMatch(bestFingerprint.GetNama(), regex) // Handle bahasa alay regex
+                )
                 {
                     userData = user;
                     break;
