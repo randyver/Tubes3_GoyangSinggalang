@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using MySql.Data.MySqlClient;
 using Bogus;
 using Models;
@@ -11,7 +10,7 @@ namespace Db
     public class Db
     {
         private static MySqlConnection? connection;
-        private static readonly string connectionString = "server=localhost;user=tubes3_stima;password=12345;database=tubes3_stima";
+        private static readonly string connectionString = "server=localhost;user=college;password=12345;database=tubes3_stima";
 
         public static MySqlConnection GetConnection()
         {
@@ -102,8 +101,8 @@ namespace Db
 
             // Get all files in test/ folder
             // Contains 6000 images where each person has 10 fingerprint images (from each fingers)
+            // Save relative path from src (which is ../tests/<FILENAME>.BMP)
             string[] filesDirectories = Directory.GetFiles(testImagesPath);
-            string[] fileNames = [.. filesDirectories.Select(file => file.Split("/test/").Last()).OrderBy(filename => filename.Split("__")[0])];
 
             // Generate 600 names
             List<string> names = [];
@@ -114,10 +113,10 @@ namespace Db
 
             // Generate 6000 fingerprints
             List<Fingerprint> fingerprints = [];
-            for (int i = 0; i < fileNames.Length; i++)
+            for (int i = 0; i < filesDirectories.Length; i++)
             {
                 string nama = names[i / 10].Replace("'", @"\'");
-                string path = fileNames[i].Replace("'", @"\'");
+                string path = filesDirectories[i].Replace("'", @"\'");
                 fingerprints.Add(new Fingerprint(nama, path));
             }
 
@@ -135,7 +134,7 @@ namespace Db
 
                 string nik = (i + 1).ToString();
                 string tempatLahir = new Faker().Address.City().Replace("'", @"\'");
-                string tanggalLahir = new Faker().Person.DateOfBirth.ToString("yyyy-MM-dd");
+                DateTime tanggalLahir = new Faker().Person.DateOfBirth;
                 string jenisKelamin = new Random().Next(0, 2) == 0 ? "Laki-Laki" : "Perempuan";
                 string golonganDarah = golonganDarahEnum[new Random().Next(0, 4)];
                 string alamat = new Faker().Address.FullAddress().Replace("'", @"\'");
@@ -166,7 +165,7 @@ namespace Db
                 // Insert new biodata
                 foreach (User user in users)
                 {
-                    command.CommandText = $"INSERT INTO biodata (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) VALUES ('{user.GetNik()}', '{user.GetNama()}', '{user.GetTempatLahir()}', '{user.GetTanggalLahir()}', '{user.GetJenisKelamin()}', '{user.GetGolonganDarah()}', '{user.GetAlamat()}', '{user.GetAgama()}', '{user.GetStatusPerkawinan()}', '{user.GetPekerjaan()}', '{user.GetKewarganegaraan()}')";
+                    command.CommandText = $"INSERT INTO biodata (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) VALUES ('{user.GetNik()}', '{user.GetNama()}', '{user.GetTempatLahir()}', '{user.GetTanggalLahir():yyyy-MM-dd}', '{user.GetJenisKelamin()}', '{user.GetGolonganDarah()}', '{user.GetAlamat()}', '{user.GetAgama()}', '{user.GetStatusPerkawinan()}', '{user.GetPekerjaan()}', '{user.GetKewarganegaraan()}')";
                     command.ExecuteNonQuery();
                 }
 

@@ -153,7 +153,7 @@ namespace src.ViewModels
             get => _user?.GetTempatLahir();
         }
 
-        public string? userTanggalLahir
+        public DateTime? userTanggalLahir
         {
             get => _user?.GetTanggalLahir();
         }
@@ -214,7 +214,7 @@ namespace src.ViewModels
                 this.RaisePropertyChanged(nameof(ResultColor));
                 this.RaisePropertyChanged(nameof(ExecutionTimeString));
                 this.RaisePropertyChanged(nameof(MatchRateString));
-                UserStatus = new User("", "", "", "", "", "", "", "", "", "", "");
+                UserStatus = new User("", "", "", DateTime.Now, "", "", "", "", "", "", "");
             }
         }
 
@@ -280,7 +280,7 @@ namespace src.ViewModels
                 Console.WriteLine("Search command executed");
                 Console.WriteLine("Execution time: " + ExecutionTime + " ms");
                 Console.WriteLine("Agama" + userAgama);
-                UserStatus = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", "01-01-2000", "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
+                UserStatus = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", DateTime.Now, "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
 
 
 

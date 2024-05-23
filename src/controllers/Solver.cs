@@ -79,27 +79,24 @@ namespace Controllers
             int n = text.Length;
             int m = pattern.Length;
 
-
             // Create LPS array
             int[] lps = new int[m];
-            int i = 0;
+            lps[0] = 0;
+            int i = 1;
             int j = 0;
-            // Iterate through the pattern
+
             while (i < m)
             {
-                // If the characters are the same
                 if (pattern[i] == pattern[j])
                 {
                     lps[i] = j + 1;
                     i++;
                     j++;
                 }
-                // If the characters are different
                 else if (j > 0)
                 {
                     j = lps[j - 1];
                 }
-                // If j is at the beginning of the pattern
                 else
                 {
                     lps[i] = 0;
@@ -110,25 +107,29 @@ namespace Controllers
             // Do KMP Algorithm
             i = 0;
             j = 0;
+            // Iterate through the text
             while (i < n)
             {
                 // If the characters are the same
-                if (text[i] == pattern[j])
+                if (pattern[j] == text[i])
                 {
+                    // End of pattern (found pattern)
                     if (j == m - 1)
                     {
-                        // Found pattern
                         return true;
                     }
-                    i++;
-                    j++;
+                    // Move to the right
+                    else
+                    {
+                        i++;
+                        j++;
+                    }
                 }
                 // If the characters are different
                 else if (j > 0)
                 {
                     j = lps[j - 1];
                 }
-                // If j is at the beginning of the pattern
                 else
                 {
                     i++;
@@ -147,18 +148,18 @@ namespace Controllers
             int m = pattern.Length;
 
             // Create bad character array
-            int[] badChar = new int[256];
+            int[] last = new int[256];
 
             // Fill bad character array
             int i;
             for (i = 0; i < 256; i++)
             {
-                badChar[i] = -1;
+                last[i] = -1;
             }
 
             for (i = 0; i < m; i++)
             {
-                badChar[pattern[i]] = i;
+                last[pattern[i]] = i;
             }
 
 
@@ -190,7 +191,7 @@ namespace Controllers
                 // If the characters are different
                 else
                 {
-                    int k = badChar[text[i]];
+                    int k = last[text[i]];
                     i = i + m - Math.Min(j, 1 + k);
                     j = m - 1;
                 }
@@ -234,6 +235,7 @@ namespace Controllers
                     // Input string as pattern
                     // Finger print string as text
                     isMatch = KmpSolver(fingerPrintImageAsciiString, inputCroppedImageAsciiString);
+
                     if (isMatch)
                     {
                         // Save fingerprint (contains name & path)
@@ -275,7 +277,9 @@ namespace Controllers
                         break;
                     }
                 }
+
             }
+
 
             // If no match is found using KMP or BM, use LCS to get best match
             double SIMILARITY_LIMIT = 0.6;
@@ -324,7 +328,7 @@ namespace Controllers
             fingerPrintData = bestFingerprint;
 
             // Get all user data
-            List<Models.User> allUsers = Controllers.User.GetUsers();
+            List<Models.User> allUsers = User.GetUsers();
 
             // Get user data
             foreach (Models.User user in allUsers)

@@ -12,7 +12,7 @@ namespace Controllers
             using MySqlConnection connection = Db.Db.GetConnection();
 
             // Query
-            string query = "SELECT * FROM pengguna";
+            string query = "SELECT * FROM biodata";
 
             // Execute query
             List<Models.User> users = [];
@@ -30,7 +30,7 @@ namespace Controllers
                         reader.GetString("NIK"),
                         reader.GetString("nama"),
                         reader.GetString("tempat_lahir"),
-                        reader.GetString("tanggal_lahir"),
+                        reader.GetDateTime("tanggal_lahir"),
                         reader.GetString("jenis_kelamin"),
                         reader.GetString("golongan_darah"),
                         reader.GetString("alamat"),
@@ -63,7 +63,7 @@ namespace Controllers
             using MySqlConnection connection = Db.Db.GetConnection();
 
             // Query
-            string query = "SELECT * FROM pengguna WHERE nama REGEXP @nama";
+            string query = "SELECT * FROM biodata WHERE nama REGEXP @nama";
             List<Models.User> users = [];
 
             // Execute query
@@ -81,7 +81,7 @@ namespace Controllers
                         reader.GetString("NIK"),
                         reader.GetString("nama"),
                         reader.GetString("tempat_lahir"),
-                        reader.GetString("tanggal_lahir"),
+                        reader.GetDateTime("tanggal_lahir"),
                         reader.GetString("jenis_kelamin"),
                         reader.GetString("golongan_darah"),
                         reader.GetString("alamat"),
