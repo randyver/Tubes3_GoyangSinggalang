@@ -25,6 +25,7 @@
             private bool _error = false;
             private bool _initial = true;
             private string _error_message = "No error occurred";
+            private string _resultName;
 
             public bool IsKMPChecked
             {
@@ -45,6 +46,34 @@
             {
                 get => _resultImage;
                 set => this.RaiseAndSetIfChanged(ref _resultImage, value);
+            }
+
+            public string ResultName
+            {
+                get => _resultName;
+                set
+                {
+                    this.RaiseAndSetIfChanged(ref _resultName, value);
+                    this.RaisePropertyChanged(nameof(ResultNameString));
+                }
+            }
+
+            public string ResultNameString
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Nama: " + ResultName;
+                }
             }
 
             public string ExecutionTimeString
@@ -97,7 +126,6 @@
                 {
                     this.RaiseAndSetIfChanged(ref _user, value);
                     this.RaisePropertyChanged(nameof(userNIK));
-                    this.RaisePropertyChanged(nameof(userNama));
                     this.RaisePropertyChanged(nameof(userTempatLahir));
                     this.RaisePropertyChanged(nameof(userTanggalLahirString));
                     this.RaisePropertyChanged(nameof(userJenisKelamin));
@@ -142,7 +170,7 @@
                         return "Error occurred";
                     }
 
-                    return "Nama: " + _user?.GetNama();
+                    return "Nama: " + ResultName;
                 }
             }
 
@@ -415,6 +443,8 @@
 
                     // Load the fingerprint image as the result image
                     var resultImageFilePath = fingerPrintData?.GetPath();
+                    ResultName = fingerPrintData?.GetNama();
+
                     if (resultImageFilePath != null)
                     {
                         ResultImage = new Bitmap(resultImageFilePath);
@@ -426,6 +456,7 @@
                     }
 
                     Console.WriteLine(resultImageFilePath);
+                    Console.WriteLine(ResultName);
                     Console.WriteLine("Search command executed");
                     Console.WriteLine("Execution time: " + ExecutionTime + " ms");
                     Console.WriteLine("Match rate: " + MatchRate + "%");

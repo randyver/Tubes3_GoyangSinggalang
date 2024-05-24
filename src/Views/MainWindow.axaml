@@ -53,7 +53,7 @@
         <Border Grid.Row="1" Grid.Column="2" Background="LightGray" Margin="10">
             <StackPanel>
                 <TextBlock Text="{Binding userNIK}" Margin="5"/>
-                <TextBlock Text="{Binding userNama}" Margin="5"/>
+                <TextBlock Text="{Binding ResultNameString}" Margin="5"/>
                 <TextBlock Text="{Binding userTempatLahir}" Margin="5"/>
                 <TextBlock Text="{Binding userTanggalLahirString}" Margin="5"/>
                 <TextBlock Text="{Binding userJenisKelamin}" Margin="5"/>
