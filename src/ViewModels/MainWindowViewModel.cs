@@ -84,7 +84,7 @@
                     {
                         return "Error occurred";
                     }
-                    return "Execution time: " + ExecutionTime + " ms";
+                    return "Execution time : " + ExecutionTime + " ms";
                 }
             }
 
@@ -106,7 +106,7 @@
                     {
                         return _error_message;
                     }
-                    return "Match rate: " + MatchRate + "%";
+                    return "Match rate          : " + MatchRate + "%";
                 }
             }
 
@@ -340,7 +340,7 @@
                     {
                         return "Red";
                     }
-                    return "Green";
+                    return "#E84545";
                 }
             }
 
@@ -367,7 +367,7 @@
                     var storageProvider = new Window().StorageProvider;
                     var options = new FilePickerOpenOptions
                     {
-                        Title = "Select an image",
+                        Title = "Select an Image",
                         FileTypeFilter = new List<FilePickerFileType>
                         {
                             new FilePickerFileType("Images")
@@ -457,9 +457,8 @@
 
                     Console.WriteLine(resultImageFilePath);
                     Console.WriteLine(ResultName);
-                    Console.WriteLine("Search command executed");
-                    Console.WriteLine("Execution time: " + ExecutionTime + " ms");
-                    Console.WriteLine("Match rate: " + MatchRate + "%");
+                    Console.WriteLine("Execution time   : " + ExecutionTime + " ms");
+                    Console.WriteLine("Match rate       : " + MatchRate + "%");
                 });
             }
         }
