@@ -1,292 +1,435 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive;
-using System.Threading.Tasks;
-using Avalonia.Controls;
-using Avalonia.Platform.Storage;
-using Avalonia.Media.Imaging;
-using ReactiveUI;
-using Models;
-using System.Text.RegularExpressions;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reactive;
+    using System.Threading.Tasks;
+    using Avalonia.Controls;
+    using Avalonia.Platform.Storage;
+    using Avalonia.Media.Imaging;
+    using ReactiveUI;
+    using Models;
+    using System.Text.RegularExpressions;
+    using Solver = Controllers.Solver;
 
-
-namespace src.ViewModels
-{
-    public class MainWindowViewModel : ViewModelBase
+    namespace src.ViewModels
     {
-        private bool _isKMPChecked;
-        private Bitmap? _selectedImage;
-        private Bitmap? _resultImage;
-        private string _time = "0";
-        private string _matchRate = "0";
-        private User? _user;
-        private bool _error = false;
-        private bool _initial = true;
-        private string _error_message = "No error occurred";
-
-
-        public bool IsKMPChecked
+        public class MainWindowViewModel : ViewModelBase
         {
-            get => _isKMPChecked;
-            set
+            private bool _isKMPChecked;
+            private Bitmap? _selectedImage;
+            private Bitmap? _resultImage;
+            private string _selectedImagePath = string.Empty;
+            private string _time = "0";
+            private string _matchRate = "0";
+            private User? _user;
+            private bool _error = false;
+            private bool _initial = true;
+            private string _error_message = "No error occurred";
+
+            public bool IsKMPChecked
             {
-                string bahasaAlay = Lib.Utils.GetBahasaAlay("Dewantoro Triatmojo");
-                bahasaAlay = "l3Br0n J4m3s";
-                Console.WriteLine("Before change, KMP: " + _isKMPChecked);
-                string regex = Lib.Utils.GetRegex(bahasaAlay);
-                Console.WriteLine(bahasaAlay);
-                Console.WriteLine(regex);
-
-                Match match = Regex.Match("Lebron James", regex);
-                Console.WriteLine("Match? " + match.Success);
-
-
-                this.RaiseAndSetIfChanged(ref _isKMPChecked, value);
-                Console.WriteLine("After change, KMP: " + value);
-            }
-        }
-
-        public Bitmap? SelectedImage
-        {
-            get => _selectedImage;
-            set
-            {
-                this.RaiseAndSetIfChanged(ref _selectedImage, value);
-            }
-        }
-
-        public Bitmap? ResultImage
-        {
-            get => _resultImage;
-            set => this.RaiseAndSetIfChanged(ref _resultImage, value);
-        }
-
-        public string ExecutionTimeString
-        {
-            get
-            {
-                if (_error)
+                get => _isKMPChecked;
+                set
                 {
-                    return "Error occurred";
+                    this.RaiseAndSetIfChanged(ref _isKMPChecked, value);
                 }
-                return "Execution time: " + ExecutionTime + " ms";
             }
-        }
 
-        public string ExecutionTime
-        {
-            get => _time;
-            set
+            public Bitmap? SelectedImage
             {
-                this.RaiseAndSetIfChanged(ref _time, value);
-                this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                get => _selectedImage;
+                set => this.RaiseAndSetIfChanged(ref _selectedImage, value);
             }
-        }
 
-        public string MatchRateString
-        {
-            get
+            public Bitmap? ResultImage
             {
-                if (_error)
+                get => _resultImage;
+                set => this.RaiseAndSetIfChanged(ref _resultImage, value);
+            }
+
+            public string ExecutionTimeString
+            {
+                get
                 {
-                    return _error_message;
-                }
-                return "Match rate: " + MatchRate + "%";
-            }
-        }
-
-        public string MatchRate
-        {
-            get => _matchRate;
-            set
-            {
-                this.RaiseAndSetIfChanged(ref _matchRate, value);
-                this.RaisePropertyChanged(nameof(MatchRateString));
-            }
-        }
-
-        public User UserStatus
-        {
-            set
-            {
-                this.RaiseAndSetIfChanged(ref _user, value);
-                this.RaisePropertyChanged(nameof(userNIK));
-                this.RaisePropertyChanged(nameof(userNama));
-                this.RaisePropertyChanged(nameof(userTempatLahir));
-                this.RaisePropertyChanged(nameof(userTanggalLahir));
-                this.RaisePropertyChanged(nameof(userJenisKelamin));
-                this.RaisePropertyChanged(nameof(userGolonganDarah));
-                this.RaisePropertyChanged(nameof(userAlamat));
-                this.RaisePropertyChanged(nameof(userAgama));
-                this.RaisePropertyChanged(nameof(userStatusPerkawinan));
-                this.RaisePropertyChanged(nameof(userPekerjaan));
-                this.RaisePropertyChanged(nameof(userKewarganegaraan));
-            }
-        }
-
-        public string? userNIK
-        {
-            get
-            {
-                if (_initial)
-                {
-                    return "";
-                }
-
-                if (_error)
-                {
-                    return "Error occurred";
-                }
-
-                return "NIK: " + _user?.GetNik();
-            }
-        }
-
-        public string? userNama
-        {
-            get => "Nama: " + _user?.GetNama();
-        }
-
-        public string? userTempatLahir
-        {
-            get => _user?.GetTempatLahir();
-        }
-
-        public DateTime? userTanggalLahir
-        {
-            get => _user?.GetTanggalLahir();
-        }
-
-        public string? userJenisKelamin
-        {
-            get => _user?.GetJenisKelamin();
-        }
-
-        public string? userGolonganDarah
-        {
-            get => _user?.GetGolonganDarah();
-        }
-
-        public string? userAlamat
-        {
-            get => _user?.GetAlamat();
-        }
-
-        public string? userAgama
-        {
-            get => _user?.GetAgama();
-        }
-
-        public string? userStatusPerkawinan
-        {
-            get => _user?.GetStatusPerkawinan();
-        }
-
-        public string? userPekerjaan
-        {
-            get => _user?.GetPekerjaan();
-        }
-
-        public string? userKewarganegaraan
-        {
-            get => _user.GetKewarganegaraan();
-        }
-
-        public string ResultColor
-        {
-            get
-            {
-                if (_error)
-                {
-                    return "Red";
-                }
-                return "Green";
-            }
-        }
-
-        public string ErrorMessage
-        {
-            get => _error_message;
-            set
-            {
-                this.RaiseAndSetIfChanged(ref _error_message, value);
-                this.RaisePropertyChanged(nameof(ResultColor));
-                this.RaisePropertyChanged(nameof(ExecutionTimeString));
-                this.RaisePropertyChanged(nameof(MatchRateString));
-                UserStatus = new User("", "", "", DateTime.Now, "", "", "", "", "", "", "");
-            }
-        }
-
-
-
-
-        public ReactiveCommand<Unit, Unit> OpenFileCommand { get; }
-        public ReactiveCommand<Unit, Unit> SearchCommand { get; }
-
-
-        public MainWindowViewModel()
-        {
-            OpenFileCommand = ReactiveCommand.CreateFromTask(async () =>
-            {
-                var storageProvider = new Window().StorageProvider;
-                var options = new FilePickerOpenOptions
-                {
-                    Title = "Select an image",
-                    FileTypeFilter = new List<FilePickerFileType>
+                    if (_error)
                     {
-                        new FilePickerFileType("Images")
-                        {
-                            Patterns = new List<string> { "*.png", "*.jpg", "*.jpeg", "*.BMP" }
-                        }
+                        return "Error occurred";
                     }
-                };
-
-                var result = await storageProvider.OpenFilePickerAsync(options);
-                if (result.Any())
-                {
-                    var filePath = result.First().Path.LocalPath;
-                    SelectedImage = new Bitmap(filePath);
+                    return "Execution time: " + ExecutionTime + " ms";
                 }
-            });
+            }
 
-
-            SearchCommand = ReactiveCommand.Create(() =>
+            public string ExecutionTime
             {
-                // TODO: Implement search logic here 
-                // Assigned to: @randy
-                _error = false;
-                _initial = false;
-
-                // No image selected
-                if (SelectedImage == null)
+                get => _time;
+                set
                 {
-                    _error = true;
-                    ErrorMessage = "No image selected";
-                    return;
+                    this.RaiseAndSetIfChanged(ref _time, value);
+                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
                 }
+            }
 
-                // Image selected but format not supported
-                if (SelectedImage.PixelSize.Width == 0)
+            public string MatchRateString
+            {
+                get
                 {
-                    _error = true;
-                    ErrorMessage = "Unsupported image format";
-                    return;
+                    if (_error)
+                    {
+                        return _error_message;
+                    }
+                    return "Match rate: " + MatchRate + "%";
                 }
+            }
 
-                // OK!
-                ExecutionTime = "123";
-                MatchRate = "95";
-                Console.WriteLine("Search command executed");
-                Console.WriteLine("Execution time: " + ExecutionTime + " ms");
-                Console.WriteLine("Agama" + userAgama);
-                UserStatus = new User("1234567890", "Dewantoro Triatmojo", "Jakarta", DateTime.Now, "Laki-laki", "O", "Jl. Kebon Jeruk", "Islam", "Belum Kawin", "Mahasiswa", "WNI");
+            public string MatchRate
+            {
+                get => _matchRate;
+                set
+                {
+                    this.RaiseAndSetIfChanged(ref _matchRate, value);
+                    this.RaisePropertyChanged(nameof(MatchRateString));
+                }
+            }
+
+            public User UserStatus
+            {
+                set
+                {
+                    this.RaiseAndSetIfChanged(ref _user, value);
+                    this.RaisePropertyChanged(nameof(userNIK));
+                    this.RaisePropertyChanged(nameof(userNama));
+                    this.RaisePropertyChanged(nameof(userTempatLahir));
+                    this.RaisePropertyChanged(nameof(userTanggalLahirString));
+                    this.RaisePropertyChanged(nameof(userJenisKelamin));
+                    this.RaisePropertyChanged(nameof(userGolonganDarah));
+                    this.RaisePropertyChanged(nameof(userAlamat));
+                    this.RaisePropertyChanged(nameof(userAgama));
+                    this.RaisePropertyChanged(nameof(userStatusPerkawinan));
+                    this.RaisePropertyChanged(nameof(userPekerjaan));
+                    this.RaisePropertyChanged(nameof(userKewarganegaraan));
+                }
+            }
+
+            public string? userNIK
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "NIK: " + _user?.GetNik();
+                }
+            }
+
+            public string? userNama
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Nama: " + _user?.GetNama();
+                }
+            }
+
+            public string? userTempatLahir
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Tempat Lahir: " + _user?.GetTempatLahir();
+                }
+            }
+
+            public string? userTanggalLahirString
+            {
+                get
+                {
+                    if (_initial || _error || _user?.GetTanggalLahir() == null)
+                    {
+                        return "";
+                    }
+                    return "Tanggal Lahir: " + _user.GetTanggalLahir().ToString("dd MMMM yyyy");
+                }
+            }
 
 
+            public string? userJenisKelamin
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
 
-                // Change the result image to the proper one!
-                ResultImage = SelectedImage;
-            });
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Jenis Kelamin: " + _user?.GetJenisKelamin();
+                }
+            }
+
+            public string? userGolonganDarah
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Golongan Darah: " + _user?.GetGolonganDarah();
+                }
+            }
+
+            public string? userAlamat
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Alamat: " + _user?.GetAlamat();
+                }
+            }
+
+            public string? userAgama
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Agama: " + _user?.GetAgama();
+                }
+            }
+
+            public string? userStatusPerkawinan
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Status Perkawinan: " + _user?.GetStatusPerkawinan();
+                }
+            }
+
+            public string? userPekerjaan
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Pekerjaan: " + _user?.GetPekerjaan();
+                }
+            }
+
+            public string? userKewarganegaraan
+            {
+                get
+                {
+                    if (_initial)
+                    {
+                        return "";
+                    }
+
+                    if (_error)
+                    {
+                        return "Error occurred";
+                    }
+
+                    return "Kewarganegaraan: " + _user?.GetKewarganegaraan();
+                }
+            }
+
+
+            public string ResultColor
+            {
+                get
+                {
+                    if (_error)
+                    {
+                        return "Red";
+                    }
+                    return "Green";
+                }
+            }
+
+            public string ErrorMessage
+            {
+                get => _error_message;
+                set
+                {
+                    this.RaiseAndSetIfChanged(ref _error_message, value);
+                    this.RaisePropertyChanged(nameof(ResultColor));
+                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                    this.RaisePropertyChanged(nameof(MatchRateString));
+                    UserStatus = new User("", "", "", DateTime.Now, "", "", "", "", "", "", "");
+                }
+            }
+
+            public ReactiveCommand<Unit, Unit> OpenFileCommand { get; }
+            public ReactiveCommand<Unit, Unit> SearchCommand { get; }
+
+            public MainWindowViewModel()
+            {
+                OpenFileCommand = ReactiveCommand.CreateFromTask(async () =>
+                {
+                    var storageProvider = new Window().StorageProvider;
+                    var options = new FilePickerOpenOptions
+                    {
+                        Title = "Select an image",
+                        FileTypeFilter = new List<FilePickerFileType>
+                        {
+                            new FilePickerFileType("Images")
+                            {
+                                Patterns = new List<string> { "*.png", "*.jpg", "*.jpeg", "*.BMP" }
+                            }
+                        }
+                    };
+
+                    var result = await storageProvider.OpenFilePickerAsync(options);
+                    if (result.Any())
+                    {
+                        var filePath = result.First().Path.LocalPath;
+                        SelectedImage = new Bitmap(filePath);
+                        _selectedImagePath = filePath;
+                    }
+                });
+
+                SearchCommand = ReactiveCommand.Create(() =>
+                {
+                    _error = false;
+                    _initial = false;
+
+                    // No image selected
+                    if (SelectedImage == null)
+                    {
+                        _error = true;
+                        ErrorMessage = "No image selected";
+                        return;
+                    }
+
+                    // Image selected but format not supported
+                    if (SelectedImage.PixelSize.Width == 0)
+                    {
+                        _error = true;
+                        ErrorMessage = "Unsupported image format";
+                        return;
+                    }
+
+                    // Use the stored file path
+                    var filePath = _selectedImagePath;
+                    if (string.IsNullOrEmpty(filePath))
+                    {
+                        _error = true;
+                        ErrorMessage = "Unable to retrieve the file path for the selected image";
+                        return;
+                    }
+
+                    // Create a Solver instance
+                    Solver solver = new Solver(filePath, IsKMPChecked);
+
+                    // Perform the solve operation
+                    solver.Solve();
+
+                    // Get the results from the solver
+                    var duration = solver.GetDuration();
+                    var similarity = solver.GetSimilarity();
+                    var userData = solver.GetUserData();
+                    var fingerPrintData = solver.GetFingerPrintData();
+
+                    if (userData == null || fingerPrintData == null)
+                    {
+                        _error = true;
+                        ErrorMessage = "No matching fingerprint found";
+                        return;
+                    }
+
+                    // Update the view model properties with the results
+                    ExecutionTime = duration?.ToString() ?? "N/A";
+                    MatchRate = ((similarity ?? 0) * 100).ToString("F2");
+
+                    UserStatus = userData;
+
+                    // Load the fingerprint image as the result image
+                    var resultImageFilePath = fingerPrintData?.GetPath();
+                    if (resultImageFilePath != null)
+                    {
+                        ResultImage = new Bitmap(resultImageFilePath);
+                    }
+                    else
+                    {
+                        _error = true;
+                        ErrorMessage = "Failed to load the result image";
+                    }
+
+                    Console.WriteLine(resultImageFilePath);
+                    Console.WriteLine("Search command executed");
+                    Console.WriteLine("Execution time: " + ExecutionTime + " ms");
+                    Console.WriteLine("Match rate: " + MatchRate + "%");
+                });
+            }
         }
     }
-}
