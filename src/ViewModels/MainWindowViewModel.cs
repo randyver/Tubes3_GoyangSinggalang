@@ -63,14 +63,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Nama: " + ResultName;
@@ -167,14 +162,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "NIK: " + _user?.GetNik();
@@ -185,14 +175,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Nama: " + ResultName;
@@ -203,14 +188,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Tempat Lahir: " + _user?.GetTempatLahir();
@@ -234,14 +214,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Jenis Kelamin: " + _user?.GetJenisKelamin();
@@ -252,14 +227,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Golongan Darah: " + _user?.GetGolonganDarah();
@@ -270,14 +240,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Alamat: " + _user?.GetAlamat();
@@ -288,14 +253,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Agama: " + _user?.GetAgama();
@@ -306,14 +266,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Status Perkawinan: " + _user?.GetStatusPerkawinan();
@@ -324,14 +279,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Pekerjaan: " + _user?.GetPekerjaan();
@@ -342,14 +292,9 @@
             {
                 get
                 {
-                    if (_initial || _isSearching)
+                    if (_initial || _isSearching || _error)
                     {
                         return "";
-                    }
-
-                    if (_error)
-                    {
-                        return "Error occurred";
                     }
 
                     return "Kewarganegaraan: " + _user?.GetKewarganegaraan();
