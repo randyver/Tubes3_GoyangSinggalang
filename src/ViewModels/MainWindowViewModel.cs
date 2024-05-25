@@ -63,7 +63,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -167,7 +167,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -185,7 +185,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -203,7 +203,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -221,7 +221,7 @@
             {
                 get
                 {
-                    if (_initial || _error || _user?.GetTanggalLahir() == null)
+                    if (_initial || _isSearching || _error || _user?.GetTanggalLahir() == null)
                     {
                         return "";
                     }
@@ -234,7 +234,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -252,7 +252,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -270,7 +270,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -288,7 +288,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -306,7 +306,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -324,7 +324,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -342,7 +342,7 @@
             {
                 get
                 {
-                    if (_initial)
+                    if (_initial || _isSearching)
                     {
                         return "";
                     }
@@ -411,11 +411,18 @@
                     }
                 });
 
-                 SearchCommand = ReactiveCommand.CreateFromTask(async () =>
+                SearchCommand = ReactiveCommand.CreateFromTask(async () =>
                 {
                     _error = false;
                     _initial = false;
                     IsSearching = true;
+
+                    // Reset biodata and result image
+                    UserStatus = new User("", "", "", DateTime.Now, "", "", "", "", "", "", "");
+                    ResultImage = null;
+                    ExecutionTime = "0";
+                    MatchRate = "0";
+                    ResultName = "";
 
                     // No image selected
                     if (SelectedImage == null)
@@ -451,6 +458,9 @@
                     // Perform the solve operation asynchronously
                     await Task.Run(() => solver.Solve());
 
+                    // End searching state
+                    IsSearching = false;
+
                     // Get the results from the solver
                     var duration = solver.GetDuration();
                     var similarity = solver.GetSimilarity();
@@ -485,8 +495,8 @@
                         ErrorMessage = "Failed to load the result image";
                     }
 
-                    // End searching state
-                    IsSearching = false;
+                    // // End searching state
+                    // IsSearching = false;
 
                     Console.WriteLine(resultImageFilePath);
                     Console.WriteLine(ResultName);
