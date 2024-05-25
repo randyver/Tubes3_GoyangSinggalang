@@ -26,6 +26,7 @@
             private bool _initial = true;
             private string _error_message = "No error occurred";
             private string _resultName;
+            private bool _isSearching = false;
 
             public bool IsKMPChecked
             {
@@ -80,11 +81,17 @@
             {
                 get
                 {
+                    if (_isSearching)
+                    {
+                        return "Searching...";
+                    }
+
                     if (_error)
                     {
                         return "Error occurred";
                     }
-                    return "Execution time : " + ExecutionTime + " ms";
+
+                    return "Execution time: " + ExecutionTime + " ms";
                 }
             }
 
@@ -102,11 +109,17 @@
             {
                 get
                 {
+                    if (_isSearching)
+                    {
+                        return "";
+                    }
+
                     if (_error)
                     {
                         return _error_message;
                     }
-                    return "Match rate          : " + MatchRate + "%";
+
+                    return "Match rate: " + MatchRate + "%";
                 }
             }
 
@@ -119,6 +132,18 @@
                     this.RaisePropertyChanged(nameof(MatchRateString));
                 }
             }
+
+            public bool IsSearching
+            {
+                get => _isSearching;
+                set
+                {
+                    this.RaiseAndSetIfChanged(ref _isSearching, value);
+                    this.RaisePropertyChanged(nameof(ExecutionTimeString));
+                    this.RaisePropertyChanged(nameof(MatchRateString));
+                }
+            }
+
 
             public User UserStatus
             {
@@ -386,16 +411,18 @@
                     }
                 });
 
-                SearchCommand = ReactiveCommand.Create(() =>
+                 SearchCommand = ReactiveCommand.CreateFromTask(async () =>
                 {
                     _error = false;
                     _initial = false;
+                    IsSearching = true;
 
                     // No image selected
                     if (SelectedImage == null)
                     {
                         _error = true;
                         ErrorMessage = "No image selected";
+                        IsSearching = false;
                         return;
                     }
 
@@ -404,6 +431,7 @@
                     {
                         _error = true;
                         ErrorMessage = "Unsupported image format";
+                        IsSearching = false;
                         return;
                     }
 
@@ -413,14 +441,15 @@
                     {
                         _error = true;
                         ErrorMessage = "Unable to retrieve the file path for the selected image";
+                        IsSearching = false;
                         return;
                     }
 
                     // Create a Solver instance
                     Solver solver = new Solver(filePath, IsKMPChecked);
 
-                    // Perform the solve operation
-                    solver.Solve();
+                    // Perform the solve operation asynchronously
+                    await Task.Run(() => solver.Solve());
 
                     // Get the results from the solver
                     var duration = solver.GetDuration();
@@ -432,6 +461,7 @@
                     {
                         _error = true;
                         ErrorMessage = "No matching fingerprint found";
+                        IsSearching = false;
                         return;
                     }
 
@@ -454,6 +484,9 @@
                         _error = true;
                         ErrorMessage = "Failed to load the result image";
                     }
+
+                    // End searching state
+                    IsSearching = false;
 
                     Console.WriteLine(resultImageFilePath);
                     Console.WriteLine(ResultName);
