@@ -71,6 +71,49 @@ namespace Controllers
             return dp[n, m] / Math.Max(n, m);
         }
 
+        private static double LevenshteinDistance(string s1, string s2)
+        {
+            // Get length of both strings
+            int n = s1.Length;
+            int m = s2.Length;
+
+            // Create dp array
+            double[,] dp = new double[n + 1, m + 1];
+
+            // Base case
+            for (int i = 0; i <= n; i++)
+            {
+                dp[i, 0] = i;
+            }
+            for (int i = 0; i <= m; i++)
+            {
+                dp[0, i] = i;
+            }
+
+            // Fill dp array
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= m; j++)
+                {
+                    // If the characters are the same
+                    if (s1[i - 1] == s2[j - 1])
+                    {
+                        // Add 0 to the previous diagonal value
+                        dp[i, j] = dp[i - 1, j - 1];
+                    }
+                    // If the characters are different
+                    else
+                    {
+                        // Get the minimum value from the top, left, and diagonal
+                        dp[i, j] = Math.Min(dp[i - 1, j - 1], Math.Min(dp[i - 1, j], dp[i, j - 1])) + 1;
+                    }
+                }
+            }
+
+            // Return similarity
+            return 1 - dp[n, m] / Math.Max(n, m);
+        }
+
         // KMP Solver
         private static bool KmpSolver(string text, string pattern)
         {
