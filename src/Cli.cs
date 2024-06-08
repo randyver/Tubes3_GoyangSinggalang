@@ -1,12 +1,28 @@
 using System;
+using System.Text;
 using Bogus;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
+
 
 namespace Cli
 {
     public class Cli
     {
+        public static void RunAes()
+        {
+            // Test AES
+            string plaintext = "Dewantoro Triatmojo LOLLLLLLLLLLLLLLLLLLLLLLLLLL";
+            Lib.AES aes = new();
+
+            string encrypted = aes.Encrypt(plaintext);
+            Console.WriteLine("Encrypted: " + encrypted);
+            Console.WriteLine();
+
+            string decrypted = aes.Decrypt(encrypted);
+            Console.WriteLine("Decrypted: " + decrypted);
+
+        }
         public static void RunRegex()
         {
             // Test regex

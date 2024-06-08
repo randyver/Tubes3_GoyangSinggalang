@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using Bogus;
 using Models;
 using System.Linq;
+using DotNetEnv;
 
 namespace Db
 {
@@ -12,7 +13,7 @@ namespace Db
     {
         private static MySqlConnection? connection;
         private static readonly string connectionString = "server=localhost;user=college;password=12345;database=tubes3_stima";
-
+    
         public static MySqlConnection GetConnection()
         {
             if (connection != null && connection.State == System.Data.ConnectionState.Open)
