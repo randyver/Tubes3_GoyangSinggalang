@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
+using DotNetEnv;
 using System;
 
 
@@ -13,6 +14,9 @@ sealed class Program
     [STAThread]
     public static void Main(string[] args)
     {
+        // 
+        Env.Load();
+
         if (args.Length > 0 && args[0] == "--migrate")
         {
             // Migrate the database
@@ -35,7 +39,9 @@ sealed class Program
         {
             // Only for test cli program
             // Cli.Cli.RunRegex();
-            Cli.Cli.RunSolve();
+            // Cli.Cli.RunSolve();
+            // Cli.Cli.RunAes();
+            Cli.Cli.RunQuery();
             return;
         }
         else

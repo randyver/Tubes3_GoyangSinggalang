@@ -1,12 +1,50 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 using Bogus;
+using Controllers;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
+
 
 namespace Cli
 {
     public class Cli
     {
+        public static void RunQuery()
+        {
+            // Test query
+            List<Models.User> users = Controllers.User.GetUsers();
+            List<Models.Fingerprint> fingerprints = Controllers.Fingerprint.GetFingerprints();
+
+            // Print result
+            for (int i = 0; i < users.Count; i++)
+            {
+                users[i].Print();
+                Console.WriteLine();
+            }
+
+            // // Print result
+            // for (int i = 0; i < fingerprints.Count; i++)
+            // {
+            //     fingerprints[i].Print();
+            //     Console.WriteLine();
+            // }
+        }
+        public static void RunAes()
+        {
+            // Test AES
+            string plaintext = "Dewantoro Triatmojo LOLLLLLLLLLLLLLLLLLLLLLLLLLL";
+            Lib.AES aes = new();
+
+            string encrypted = aes.Encrypt(plaintext);
+            Console.WriteLine("Encrypted: " + encrypted);
+            Console.WriteLine();
+
+            string decrypted = aes.Decrypt(encrypted);
+            Console.WriteLine("Decrypted: " + decrypted);
+
+        }
         public static void RunRegex()
         {
             // Test regex
