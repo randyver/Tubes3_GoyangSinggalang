@@ -40,7 +40,8 @@ sealed class Program
             // Only for test cli program
             // Cli.Cli.RunRegex();
             // Cli.Cli.RunSolve();
-            Cli.Cli.RunAes();
+            // Cli.Cli.RunAes();
+            Cli.Cli.RunQuery();
             return;
         }
         else

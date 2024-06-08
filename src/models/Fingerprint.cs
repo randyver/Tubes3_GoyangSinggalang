@@ -1,3 +1,5 @@
+using System;
+
 namespace Models
 {
     public class Fingerprint(string nama, string path)
@@ -16,6 +18,12 @@ namespace Models
         public string GetPath()
         {
             return path;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Nama: {nama}");
+            Console.WriteLine($"Path: {path}");
         }
     }
 

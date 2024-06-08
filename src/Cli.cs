@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using Bogus;
+using Controllers;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
@@ -9,6 +11,26 @@ namespace Cli
 {
     public class Cli
     {
+        public static void RunQuery()
+        {
+            // Test query
+            List<Models.User> users = Controllers.User.GetUsers();
+            List<Models.Fingerprint> fingerprints = Controllers.Fingerprint.GetFingerprints();
+
+            // Print result
+            for (int i = 0; i < users.Count; i++)
+            {
+                users[i].Print();
+                Console.WriteLine();
+            }
+
+            // // Print result
+            // for (int i = 0; i < fingerprints.Count; i++)
+            // {
+            //     fingerprints[i].Print();
+            //     Console.WriteLine();
+            // }
+        }
         public static void RunAes()
         {
             // Test AES
