@@ -34,7 +34,7 @@ CREATE USER 'college'@'localhost' IDENTIFIED BY '12345';
 GRANT ALL PRIVILEGES ON tubes3_stima.* TO 'college'@'localhost';
 ```
 
-4. Load hasil seeding (dump pada src/db/seeded.sql)
+4. Load hasil seeding encrypted (dump pada src/db/seeded.sql)
 
 ```bash
 make load-dump
@@ -50,16 +50,16 @@ make run
 
 ### Beberapa command tambahan
 
-1. Generate seed baru dengan encryption AES
-
-```bash
-make seed
-```
-
-2. Migrate / import schema database dengan encryption
+1. Migrate / import schema database dengan encryption
 
 ```bash
 make migrate
+```
+
+2. Generate seeding baru dengan encryption AES
+
+```bash
+make seed
 ```
 
 3. Migrate / import schema database raw (tanpa encryption)
