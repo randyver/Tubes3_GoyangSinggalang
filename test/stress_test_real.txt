@@ -1,0 +1,532 @@
+/home/ganadipa/code/kuliah/GoyangSinggalang/src/ViewModels/MainWindowViewModel.cs(434,34): warning CS8601: Possible null reference assignment. [/home/ganadipa/code/kuliah/GoyangSinggalang/src/src.csproj]
+/home/ganadipa/code/kuliah/GoyangSinggalang/src/ViewModels/MainWindowViewModel.cs(335,20): warning CS8618: Non-nullable field '_resultName' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/home/ganadipa/code/kuliah/GoyangSinggalang/src/src.csproj]
+File: ../test/real/325__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/325__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 1/1
+Match but INCORRECT: 0/1
+No data found: 0/1
+
+
+File: ../test/real/334__F_Left_little_finger.BMP
+1
+Matched with ../test/real/334__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 2/2
+Match but INCORRECT: 0/2
+No data found: 0/2
+
+
+File: ../test/real/96__M_Right_index_finger.BMP
+1
+Matched with ../test/real/96__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 3/3
+Match but INCORRECT: 0/3
+No data found: 0/3
+
+
+File: ../test/real/192__M_Right_index_finger.BMP
+1
+Matched with ../test/real/192__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 4/4
+Match but INCORRECT: 0/4
+No data found: 0/4
+
+
+File: ../test/real/46__M_Left_little_finger.BMP
+1
+Matched with ../test/real/46__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 5/5
+Match but INCORRECT: 0/5
+No data found: 0/5
+
+
+File: ../test/real/147__M_Left_thumb_finger.BMP
+1
+Matched with ../test/real/147__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 6/6
+Match but INCORRECT: 0/6
+No data found: 0/6
+
+
+File: ../test/real/218__M_Left_index_finger.BMP
+1
+Matched with ../test/real/218__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 7/7
+Match but INCORRECT: 0/7
+No data found: 0/7
+
+
+File: ../test/real/65__M_Right_thumb_finger.BMP
+1
+Matched with ../test/real/65__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 8/8
+Match but INCORRECT: 0/8
+No data found: 0/8
+
+
+File: ../test/real/339__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/339__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 9/9
+Match but INCORRECT: 0/9
+No data found: 0/9
+
+
+File: ../test/real/159__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/159__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 10/10
+Match but INCORRECT: 0/10
+No data found: 0/10
+
+
+File: ../test/real/588__M_Left_little_finger.BMP
+1
+Matched with ../test/real/588__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 11/11
+Match but INCORRECT: 0/11
+No data found: 0/11
+
+
+File: ../test/real/192__M_Right_thumb_finger.BMP
+No data found
+Match & CORRECT: 11/12
+Match but INCORRECT: 0/12
+No data found: 1/12
+
+
+File: ../test/real/446__M_Left_middle_finger.BMP
+1
+Matched with ../test/real/446__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 12/13
+Match but INCORRECT: 0/13
+No data found: 1/13
+
+
+File: ../test/real/174__F_Left_ring_finger.BMP
+1
+Matched with ../test/real/174__F_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 13/14
+Match but INCORRECT: 0/14
+No data found: 1/14
+
+
+File: ../test/real/486__M_Right_ring_finger.BMP
+1
+Matched with ../test/real/486__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 14/15
+Match but INCORRECT: 0/15
+No data found: 1/15
+
+
+File: ../test/real/443__M_Right_index_finger.BMP
+1
+Matched with ../test/real/443__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 15/16
+Match but INCORRECT: 0/16
+No data found: 1/16
+
+
+File: ../test/real/600__M_Left_ring_finger.BMP
+1
+Matched with ../test/real/600__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 16/17
+Match but INCORRECT: 0/17
+No data found: 1/17
+
+
+File: ../test/real/216__M_Right_index_finger.BMP
+1
+Matched with ../test/real/216__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 17/18
+Match but INCORRECT: 0/18
+No data found: 1/18
+
+
+File: ../test/real/218__M_Left_thumb_finger.BMP
+1
+Matched with ../test/real/218__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 18/19
+Match but INCORRECT: 0/19
+No data found: 1/19
+
+
+File: ../test/real/404__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/404__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 19/20
+Match but INCORRECT: 0/20
+No data found: 1/20
+
+
+File: ../test/real/114__F_Left_middle_finger.BMP
+1
+Matched with ../test/real/114__F_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 20/21
+Match but INCORRECT: 0/21
+No data found: 1/21
+
+
+File: ../test/real/488__M_Right_little_finger.BMP
+1
+Matched with ../test/real/488__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 21/22
+Match but INCORRECT: 0/22
+No data found: 1/22
+
+
+File: ../test/real/350__M_Right_ring_finger.BMP
+1
+Matched with ../test/real/350__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 22/23
+Match but INCORRECT: 0/23
+No data found: 1/23
+
+
+File: ../test/real/183__M_Left_index_finger.BMP
+1
+Matched with ../test/real/183__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 23/24
+Match but INCORRECT: 0/24
+No data found: 1/24
+
+
+File: ../test/real/408__M_Left_little_finger.BMP
+1
+Matched with ../test/real/408__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 24/25
+Match but INCORRECT: 0/25
+No data found: 1/25
+
+
+File: ../test/real/92__F_Left_little_finger.BMP
+1
+Matched with ../test/real/92__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 25/26
+Match but INCORRECT: 0/26
+No data found: 1/26
+
+
+File: ../test/real/548__F_Right_middle_finger.BMP
+1
+Matched with ../test/real/548__F_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 26/27
+Match but INCORRECT: 0/27
+No data found: 1/27
+
+
+File: ../test/real/337__F_Left_middle_finger.BMP
+1
+Matched with ../test/real/337__F_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 27/28
+Match but INCORRECT: 0/28
+No data found: 1/28
+
+
+File: ../test/real/297__M_Left_middle_finger.BMP
+1
+Matched with ../test/real/297__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 28/29
+Match but INCORRECT: 0/29
+No data found: 1/29
+
+
+File: ../test/real/109__F_Right_ring_finger.BMP
+1
+Matched with ../test/real/109__F_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 29/30
+Match but INCORRECT: 0/30
+No data found: 1/30
+
+
+File: ../test/real/348__F_Right_little_finger.BMP
+1
+Matched with ../test/real/348__F_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 30/31
+Match but INCORRECT: 0/31
+No data found: 1/31
+
+
+File: ../test/real/519__M_Left_little_finger.BMP
+1
+Matched with ../test/real/519__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 31/32
+Match but INCORRECT: 0/32
+No data found: 1/32
+
+
+File: ../test/real/400__M_Right_index_finger.BMP
+1
+Matched with ../test/real/400__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 32/33
+Match but INCORRECT: 0/33
+No data found: 1/33
+
+
+File: ../test/real/303__F_Left_little_finger.BMP
+1
+Matched with ../test/real/303__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 33/34
+Match but INCORRECT: 0/34
+No data found: 1/34
+
+
+File: ../test/real/380__M_Right_index_finger.BMP
+1
+Matched with ../test/real/380__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 34/35
+Match but INCORRECT: 0/35
+No data found: 1/35
+
+
+File: ../test/real/376__F_Left_middle_finger.BMP
+1
+Matched with ../test/real/376__F_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 35/36
+Match but INCORRECT: 0/36
+No data found: 1/36
+
+
+File: ../test/real/575__M_Right_little_finger.BMP
+1
+Matched with ../test/real/575__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 36/37
+Match but INCORRECT: 0/37
+No data found: 1/37
+
+
+File: ../test/real/309__M_Right_thumb_finger.BMP
+1
+Matched with ../test/real/309__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 37/38
+Match but INCORRECT: 0/38
+No data found: 1/38
+
+
+File: ../test/real/32__M_Right_ring_finger.BMP
+1
+Matched with ../test/real/32__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 38/39
+Match but INCORRECT: 0/39
+No data found: 1/39
+
+
+File: ../test/real/77__M_Right_ring_finger.BMP
+1
+Matched with ../test/real/77__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 39/40
+Match but INCORRECT: 0/40
+No data found: 1/40
+
+
+File: ../test/real/50__M_Left_ring_finger.BMP
+1
+Matched with ../test/real/50__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 40/41
+Match but INCORRECT: 0/41
+No data found: 1/41
+
+
+File: ../test/real/507__M_Left_thumb_finger.BMP
+1
+Matched with ../test/real/507__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 41/42
+Match but INCORRECT: 0/42
+No data found: 1/42
+
+
+File: ../test/real/451__M_Right_index_finger.BMP
+1
+Matched with ../test/real/451__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 42/43
+Match but INCORRECT: 0/43
+No data found: 1/43
+
+
+File: ../test/real/15__F_Left_little_finger.BMP
+1
+Matched with ../test/real/15__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 43/44
+Match but INCORRECT: 0/44
+No data found: 1/44
+
+
+File: ../test/real/426__M_Left_middle_finger.BMP
+1
+Matched with ../test/real/426__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 44/45
+Match but INCORRECT: 0/45
+No data found: 1/45
+
+
+File: ../test/real/258__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/258__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 45/46
+Match but INCORRECT: 0/46
+No data found: 1/46
+
+
+File: ../test/real/381__M_Right_index_finger.BMP
+1
+Matched with ../test/real/381__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 46/47
+Match but INCORRECT: 0/47
+No data found: 1/47
+
+
+File: ../test/real/32__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/32__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 47/48
+Match but INCORRECT: 0/48
+No data found: 1/48
+
+
+File: ../test/real/566__M_Left_middle_finger.BMP
+1
+Matched with ../test/real/566__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 48/49
+Match but INCORRECT: 0/49
+No data found: 1/49
+
+
+File: ../test/real/345__M_Left_ring_finger.BMP
+1
+Matched with ../test/real/345__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 49/50
+Match but INCORRECT: 0/50
+No data found: 1/50
+
+
+File: ../test/real/181__M_Right_middle_finger.BMP
+1
+Matched with ../test/real/181__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 50/51
+Match but INCORRECT: 0/51
+No data found: 1/51
+
+
+File: ../test/real/350__M_Left_index_finger.BMP
+1
+Matched with ../test/real/350__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 51/52
+Match but INCORRECT: 0/52
+No data found: 1/52
+
+
+File: ../test/real/180__F_Left_index_finger.BMP
+1
+Matched with ../test/real/180__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 52/53
+Match but INCORRECT: 0/53
+No data found: 1/53
+
+
+File: ../test/real/74__F_Left_thumb_finger.BMP
+1
+Matched with ../test/real/74__F_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 53/54
+Match but INCORRECT: 0/54
+No data found: 1/54
+
+
+File: ../test/real/215__M_Right_ring_finger.BMP
+1
+Matched with ../test/real/215__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 54/55
+Match but INCORRECT: 0/55
+No data found: 1/55
+
+
+File: ../test/real/490__M_Left_ring_finger.BMP
+1
+Matched with ../test/real/490__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 55/56
+Match but INCORRECT: 0/56
+No data found: 1/56
+
+
+File: ../test/real/371__M_Left_middle_finger.BMP
+1
+Matched with ../test/real/371__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 56/57
+Match but INCORRECT: 0/57
+No data found: 1/57
+
+
+File: ../test/real/531__M_Right_thumb_finger.BMP
+1
+Matched with ../test/real/531__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 57/58
+Match but INCORRECT: 0/58
+No data found: 1/58
+
+
+File: ../test/real/238__M_Left_middle_finger.BMP
+1
+Matched with ../test/real/238__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 58/59
+Match but INCORRECT: 0/59
+No data found: 1/59
+
+
+File: ../test/real/353__M_Right_index_finger.BMP

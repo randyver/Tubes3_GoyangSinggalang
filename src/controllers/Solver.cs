@@ -354,9 +354,11 @@ namespace Controllers
                         if (isMatch)
                         {
                             // Save fingerprint (contains name & path)
-                            bestFingerprint = fingerprint;
-                            bestSimilarity = LevenshteinDistance(fingerPrintImageAsciiString, inputImageAsciiString);
-                            break;
+                            double current_similiarity = LevenshteinDistance(fingerPrintImageAsciiString, inputImageAsciiString);
+                            if (current_similiarity > bestSimilarity  && current_similiarity > 0.5) {
+                                bestFingerprint = fingerprint;
+                                bestSimilarity = current_similiarity;
+                            }
                         }
                     }
 
@@ -386,12 +388,12 @@ namespace Controllers
 
                         if (isMatch)
                         {
-
                             // print pattern
-                            Console.WriteLine("Pattern: " + pattern);
-                            bestFingerprint = fingerprint;
-                            bestSimilarity = LevenshteinDistance(fingerPrintImageAsciiString, inputImageAsciiString);
-                            break;
+                            double current_similiarity = LevenshteinDistance(fingerPrintImageAsciiString, inputImageAsciiString);
+                            if (current_similiarity > bestSimilarity  && current_similiarity > 0.5) {
+                                bestFingerprint = fingerprint;
+                                bestSimilarity = current_similiarity;
+                            }
                         }
                     }
 

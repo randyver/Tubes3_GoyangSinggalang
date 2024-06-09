@@ -284,7 +284,7 @@ namespace Lib
             }
             
             int count = 0;
-            for (int i = 20; i < 40; ++i) {
+            for (int i = 20; i < 45; ++i) {
                 ret[0] += originalArray[i];
                 if (originalArray[i] == (char) 255) {
                     count++;
@@ -295,7 +295,7 @@ namespace Lib
                 ret[1] += originalArray[i];
             }
 
-            for (int i = originalArray.Length - 20; i >= originalArray.Length - 40; --i) {
+            for (int i = originalArray.Length - 20; i >= originalArray.Length - 45; --i) {
                 ret[2] += originalArray[i];
             }
 

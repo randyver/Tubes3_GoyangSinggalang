@@ -134,7 +134,7 @@ namespace Cli
         public static void RunStress()
         {
             // Test directory path
-            string directoryPath = "../test/altered-medium/";
+            string directoryPath = "../test/altered-hard/";
 
             // Get all image in the directory
             string[] files = System.IO.Directory.GetFiles(directoryPath);
