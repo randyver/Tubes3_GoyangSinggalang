@@ -404,7 +404,7 @@ namespace Controllers
 
 
             // If not match, use Levenstein Distance
-            double SIMILARITY_LIMIT = 0.25;
+            double SIMILARITY_LIMIT = 0.3;
             if (!isMatch)
             {
                 Console.WriteLine("No data found so we use Levenshtein Distance");

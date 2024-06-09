@@ -400,6 +400,7 @@ namespace src.ViewModels
                     }
 
                     // Create a Solver instance
+                    Console.WriteLine("IsKmpChecked" + IsKMPChecked);
                     Solver solver = new (filePath, IsKMPChecked);
 
                     // Perform the solve operation asynchronously

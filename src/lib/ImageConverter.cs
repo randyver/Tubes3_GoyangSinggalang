@@ -225,45 +225,41 @@ namespace Lib
             // Crop the image to the effective area
             // Minimum width is 40 and height is 40
 
-            if (x_right_eff - x_left_eff < 40)
-            {
-                int try_x_left_eff = Math.Max(0, x_left_eff - (40 - (x_right_eff - x_left_eff)) / 2);
-                int try_x_right_eff = Math.Min(image.Width - 1, x_right_eff + (40 - (x_right_eff - x_left_eff)) / 2);
+            // if (x_right_eff - x_left_eff < 40)
+            // {
+            //     int try_x_left_eff = Math.Max(0, x_left_eff - (40 - (x_right_eff - x_left_eff)) / 2);
+            //     int try_x_right_eff = Math.Min(image.Width - 1, x_right_eff + (40 - (x_right_eff - x_left_eff)) / 2);
 
-                if (try_x_left_eff == 0) {
-                    x_left_eff = 0;
-                    x_right_eff = 40;
-                } else if (try_x_right_eff == image.Width - 1) {
-                    x_right_eff = image.Width - 1;
-                    x_left_eff = image.Width - 41;
-                } else {
-                    x_left_eff = try_x_left_eff;
-                    x_right_eff = try_x_right_eff;
-                }
-            }
+            //     if (try_x_left_eff == 0) {
+            //         x_left_eff = 0;
+            //         x_right_eff = 40;
+            //     } else if (try_x_right_eff == image.Width - 1) {
+            //         x_right_eff = image.Width - 1;
+            //         x_left_eff = image.Width - 41;
+            //     } else {
+            //         x_left_eff = try_x_left_eff;
+            //         x_right_eff = try_x_right_eff;
+            //     }
+            // }
 
 
-            if (y_bottom_eff - y_top_eff < 40)
-            {
-                int try_y_top_eff = Math.Max(0, y_top_eff - (40 - (y_bottom_eff - y_top_eff)) / 2);
-                int try_y_bottom_eff = Math.Min(image.Height - 1, y_bottom_eff + (40 - (y_bottom_eff - y_top_eff)) / 2);
+            // if (y_bottom_eff - y_top_eff < 40)
+            // {
+            //     int try_y_top_eff = Math.Max(0, y_top_eff - (40 - (y_bottom_eff - y_top_eff)) / 2);
+            //     int try_y_bottom_eff = Math.Min(image.Height - 1, y_bottom_eff + (40 - (y_bottom_eff - y_top_eff)) / 2);
 
-                if (try_y_top_eff == 0) {
-                    y_top_eff = 0;
-                    y_bottom_eff = 40;
-                } else if (try_y_bottom_eff == image.Height - 1) {
-                    y_bottom_eff = image.Height - 1;
-                    y_top_eff = image.Height - 41;
-                } else {
-                    y_top_eff = try_y_top_eff;
-                    y_bottom_eff = try_y_bottom_eff;
-                }
-            }
+            //     if (try_y_top_eff == 0) {
+            //         y_top_eff = 0;
+            //         y_bottom_eff = 40;
+            //     } else if (try_y_bottom_eff == image.Height - 1) {
+            //         y_bottom_eff = image.Height - 1;
+            //         y_top_eff = image.Height - 41;
+            //     } else {
+            //         y_top_eff = try_y_top_eff;
+            //         y_bottom_eff = try_y_bottom_eff;
+            //     }
+            // }
 
-            int delta_x = x_right_eff - x_left_eff;
-            int delta_y = y_bottom_eff - y_top_eff;
-
-            int min_delta = Math.Min(delta_x, delta_y);
 
 
 

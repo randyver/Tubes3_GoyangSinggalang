@@ -80,9 +80,9 @@
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,30">
             <Button Content="Select Image" Command="{Binding OpenFileCommand}"/>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="KMP" Margin="40,0,20,0" VerticalAlignment="Center" FontSize="20"/>
+                <TextBlock Text="BM" Margin="40,0,20,0" VerticalAlignment="Center" FontSize="20"/>
                 <ToggleSwitch HorizontalAlignment="Center" IsChecked="{Binding IsKMPChecked}" Margin="5" OnContent="" OffContent=""/>
-                <TextBlock Text="BM" Margin="20,0,40,0" VerticalAlignment="Center" FontSize="20"/>
+                <TextBlock Text="KMP" Margin="20,0,40,0" VerticalAlignment="Center" FontSize="20"/>
             </StackPanel>
             <Button Content="Search" Command="{Binding SearchCommand}"/>
         </StackPanel>
