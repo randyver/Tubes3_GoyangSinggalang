@@ -35,6 +35,11 @@ sealed class Program
             Db.Db.LoadDump();
             return;
         }
+        else if (args.Length > 0 && args[0] == "--stress")
+        {
+            Cli.Cli.RunStress();
+            return;
+        }
         else if (args.Length > 0 && args[0] == "--cli")
         {
             // Only for test cli program

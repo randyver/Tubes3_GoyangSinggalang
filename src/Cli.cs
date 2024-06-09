@@ -115,19 +115,24 @@ namespace Cli
             }
         }
 
-        public static void RunNyoba() {
+        public static void RunNyoba()
+        {
             string text = "aaabbb";
             string pattern = "aaa";
 
             Boolean isMatch = Controllers.Solver.BmSolver(text, pattern);
-            if (isMatch) {
+            if (isMatch)
+            {
                 Console.WriteLine("Match");
-            } else {
+            }
+            else
+            {
                 Console.WriteLine("Not Match");
             }
         }
 
-        public static void RunStress() {
+        public static void RunStress()
+        {
             // Test directory path
             string directoryPath = "../test/altered-medium/";
 
@@ -148,30 +153,31 @@ namespace Cli
 
                 if (user != null && fingerprint != null && duration != null && similarity != null)
                 {
+                    Console.WriteLine("Matched with " + solver.GetFingerPrintData()?.GetPath());
                     string filenik = file.Split("/")[3].Split("__")[0];
                     if (user.GetNik() == filenik)
                     {
-                        Console.WriteLine("Match");
+                        Console.WriteLine("Matched & CORRECT");
                         correct++;
                         count++;
                     }
                     else
                     {
-                        Console.WriteLine("Not Match");
+                        Console.WriteLine("Matched but INCORRECT");
                         count++;
 
                     }
-                    Console.WriteLine("Matched with " + solver.GetFingerPrintData()?.GetPath());
-                } else
+                }
+                else
                 {
                     Console.WriteLine("No data found");
                     count++;
                     nodatafound++;
                 }
 
-                Console.WriteLine($"Correct: {correct}/{count}");
+                Console.WriteLine($"Match & CORRECT: {correct}/{count}");
+                Console.WriteLine($"Match but INCORRECT: {count - correct - nodatafound}/{count}");
                 Console.WriteLine($"No data found: {nodatafound}/{count}\n\n");
-
             }
         }
     }
