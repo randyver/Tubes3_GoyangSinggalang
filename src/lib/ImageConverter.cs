@@ -287,15 +287,19 @@ namespace Lib
                 ret[i] = "";
             }
             
-            for (int i = 20; i < 30; ++i) {
+            int count = 0;
+            for (int i = 20; i < 40; ++i) {
                 ret[0] += originalArray[i];
+                if (originalArray[i] == (char) 255) {
+                    count++;
+                }
             }
 
             for (int i = originalArray.Length / 2 - 5; i < originalArray.Length / 2 + 5; ++i) {
                 ret[1] += originalArray[i];
             }
 
-            for (int i = originalArray.Length - 20; i >= originalArray.Length - 30; --i) {
+            for (int i = originalArray.Length - 20; i >= originalArray.Length - 40; --i) {
                 ret[2] += originalArray[i];
             }
 

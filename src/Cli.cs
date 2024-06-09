@@ -1,13 +1,51 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using Bogus;
 using Controllers;
+using Controllers;
 using ZstdSharp.Unsafe;
+
 
 namespace Cli
 {
     public class Cli
     {
+        public static void RunQuery()
+        {
+            // Test query
+            List<Models.User> users = Controllers.User.GetUsers();
+            List<Models.Fingerprint> fingerprints = Controllers.Fingerprint.GetFingerprints();
+
+            // Print result
+            for (int i = 0; i < users.Count; i++)
+            {
+                users[i].Print();
+                Console.WriteLine();
+            }
+
+            // // Print result
+            // for (int i = 0; i < fingerprints.Count; i++)
+            // {
+            //     fingerprints[i].Print();
+            //     Console.WriteLine();
+            // }
+        }
+        public static void RunAes()
+        {
+            // Test AES
+            string plaintext = "Dewantoro Triatmojo LOLLLLLLLLLLLLLLLLLLLLLLLLLL";
+            Lib.AES aes = new();
+
+            string encrypted = aes.Encrypt(plaintext);
+            Console.WriteLine("Encrypted: " + encrypted);
+            Console.WriteLine();
+
+            string decrypted = aes.Decrypt(encrypted);
+            Console.WriteLine("Decrypted: " + decrypted);
+
+        }
         public static void RunRegex()
         {
             // Test regex
@@ -92,7 +130,7 @@ namespace Cli
 
         public static void RunStress() {
             // Test directory path
-            string directoryPath = "../test/altered-hard/";
+            string directoryPath = "../test/altered-easy/";
 
             // Get all image in the directory
             string[] files = System.IO.Directory.GetFiles(directoryPath);
@@ -124,6 +162,7 @@ namespace Cli
                         count++;
 
                     }
+                    Console.WriteLine("Matched with " + solver.GetFingerPrintData()?.GetPath());
                 } else
                 {
                     Console.WriteLine("No data found");
@@ -131,7 +170,7 @@ namespace Cli
                     nodatafound++;
                 }
 
-                Console.WriteLine($"Correct: {correct}/{count}\n\n");
+                Console.WriteLine($"Correct: {correct}/{count}");
                 Console.WriteLine($"No data found: {nodatafound}/{count}\n\n");
 
             }

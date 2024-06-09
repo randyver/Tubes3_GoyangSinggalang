@@ -23,17 +23,17 @@ DROP TABLE IF EXISTS `biodata`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `biodata` (
-  `NIK` varchar(16) NOT NULL,
-  `nama` varchar(100) DEFAULT NULL,
-  `tempat_lahir` varchar(50) DEFAULT NULL,
-  `tanggal_lahir` date DEFAULT NULL,
-  `jenis_kelamin` enum('Laki-Laki','Perempuan') DEFAULT NULL,
-  `golongan_darah` varchar(5) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
-  `agama` varchar(50) DEFAULT NULL,
-  `status_perkawinan` enum('Belum Menikah','Menikah','Cerai') DEFAULT NULL,
-  `pekerjaan` varchar(100) DEFAULT NULL,
-  `kewarganegaraan` varchar(50) DEFAULT NULL,
+  `NIK` varchar(256) NOT NULL,
+  `nama` varchar(256) DEFAULT NULL,
+  `tempat_lahir` varchar(256) DEFAULT NULL,
+  `tanggal_lahir` varchar(256) DEFAULT NULL,
+  `jenis_kelamin` varchar(256) DEFAULT NULL,
+  `golongan_darah` varchar(256) DEFAULT NULL,
+  `alamat` varchar(256) DEFAULT NULL,
+  `agama` varchar(256) DEFAULT NULL,
+  `status_perkawinan` varchar(256) DEFAULT NULL,
+  `pekerjaan` varchar(256) DEFAULT NULL,
+  `kewarganegaraan` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`NIK`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `sidik_jari`;
 /*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `sidik_jari` (
   `berkas_citra` text,
-  `nama` varchar(100) DEFAULT NULL
+  `nama` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
