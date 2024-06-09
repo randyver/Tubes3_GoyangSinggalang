@@ -35,7 +35,7 @@ sealed class Program
         {
             // Only for test cli program
             // Cli.Cli.RunRegex();
-            Cli.Cli.RunSolve();
+            Cli.Cli.RunStress();
             return;
         }
         else

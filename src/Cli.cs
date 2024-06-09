@@ -1,7 +1,8 @@
 using System;
+using System.Threading;
 using Bogus;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
+using Controllers;
+using ZstdSharp.Unsafe;
 
 namespace Cli
 {
@@ -74,6 +75,65 @@ namespace Cli
             else
             {
                 Console.WriteLine("No data found");
+            }
+        }
+
+        public static void RunNyoba() {
+            string text = "aaabbb";
+            string pattern = "aaa";
+
+            Boolean isMatch = Controllers.Solver.BmSolver(text, pattern);
+            if (isMatch) {
+                Console.WriteLine("Match");
+            } else {
+                Console.WriteLine("Not Match");
+            }
+        }
+
+        public static void RunStress() {
+            // Test directory path
+            string directoryPath = "../test/altered-hard/";
+
+            // Get all image in the directory
+            string[] files = System.IO.Directory.GetFiles(directoryPath);
+            int count = 0, correct = 0, nodatafound = 0;
+
+            // Solve
+            foreach (string file in files)
+            {
+                Console.WriteLine($"File: {file}");
+                Controllers.Solver solver = new(file, false);
+                solver.Solve();
+                Models.User? user = solver.GetUserData();
+                Models.Fingerprint? fingerprint = solver.GetFingerPrintData();
+                double? duration = solver.GetDuration();
+                double? similarity = solver.GetSimilarity();
+
+                if (user != null && fingerprint != null && duration != null && similarity != null)
+                {
+                    string filenik = file.Split("/")[3].Split("__")[0];
+                    if (user.GetNik() == filenik)
+                    {
+                        Console.WriteLine("Match");
+                        correct++;
+                        count++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not Match");
+                        count++;
+
+                    }
+                } else
+                {
+                    Console.WriteLine("No data found");
+                    count++;
+                    nodatafound++;
+                }
+
+                Console.WriteLine($"Correct: {correct}/{count}\n\n");
+                Console.WriteLine($"No data found: {nodatafound}/{count}\n\n");
+
             }
         }
     }

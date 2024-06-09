@@ -10,8 +10,10 @@
     using Models;
     using System.Text.RegularExpressions;
     using Solver = Controllers.Solver;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp;
 
-    namespace src.ViewModels
+namespace src.ViewModels
     {
         public class MainWindowViewModel : ViewModelBase
         {
@@ -398,7 +400,7 @@
                     }
 
                     // Create a Solver instance
-                    Solver solver = new Solver(filePath, IsKMPChecked);
+                    Solver solver = new (filePath, IsKMPChecked);
 
                     // Perform the solve operation asynchronously
                     await Task.Run(() => solver.Solve());
