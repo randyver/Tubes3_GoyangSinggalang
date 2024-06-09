@@ -37,23 +37,47 @@ GRANT ALL PRIVILEGES ON tubes3_stima.* TO 'college'@'localhost';
 4. Load hasil seeding (dump pada src/db/seeded.sql)
 
 ```bash
-chmod +x load-dump.sh
-```
-
-```bash
-./load-dump.sh
+make load-dump
 ```
 
 ### Jalankan Program
 
-1. Jalankan script shell gui.sh
+Jalankan script shell gui.sh
 
 ```bash
-chmod +x gui.sh
+make run
 ```
 
+### Beberapa command tambahan
+
+1. Generate seed baru dengan encryption AES
+
 ```bash
-./gui.sh
+make seed
+```
+
+2. Migrate / import schema database dengan encryption
+
+```bash
+make migrate
+```
+
+3. Migrate / import schema database raw (tanpa encryption)
+
+```bash
+make raw-migrate
+```
+
+4. Generate seed baru tanpa encryption sama sekali
+
+```bash
+make raw-seed
+```
+
+5. Convert hasil dump test case asisten ke schema enkripsi serta menenkripsi data-datanya juga. (Pastikan data sudah diload terlebih dahulu, bagian ini hanya mengkonversikan saja.)
+
+```bash
+make convert-dump
 ```
 
 ## Author (Identitas Pembuat)
