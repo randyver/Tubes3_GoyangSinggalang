@@ -2,9 +2,7 @@ using System;
 
 namespace Models
 {
-    public class User(string nik, string nama, 
-    string tempatLahir, DateTime tanggalLahir, string jenisKelamin, string golonganDarah,
-    string alamat, string agama, string statusPerkawinan, string pekerjaan, string kewarganegaraan)
+    public class User(string nik, string nama, string tempatLahir, DateTime tanggalLahir, string jenisKelamin, string golonganDarah, string alamat, string agama, string statusPerkawinan, string pekerjaan, string kewarganegaraan)
     {
         // Attributes
         private readonly string nik = nik;
@@ -75,5 +73,19 @@ namespace Models
             return kewarganegaraan;
         }
 
+        public void Print()
+        {
+            Console.WriteLine($"NIK: {nik}");
+            Console.WriteLine($"Nama: {nama}");
+            Console.WriteLine($"Tempat Lahir: {tempatLahir}");
+            Console.WriteLine($"Tanggal Lahir: {tanggalLahir}");
+            Console.WriteLine($"Jenis Kelamin: {jenisKelamin}");
+            Console.WriteLine($"Golongan Darah: {golonganDarah}");
+            Console.WriteLine($"Alamat: {alamat}");
+            Console.WriteLine($"Agama: {agama}");
+            Console.WriteLine($"Status Perkawinan: {statusPerkawinan}");
+            Console.WriteLine($"Pekerjaan: {pekerjaan}");
+            Console.WriteLine($"Kewarganegaraan: {kewarganegaraan}");
+        }
     }
 }
