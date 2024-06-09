@@ -80,6 +80,30 @@ make raw-seed
 make convert-dump
 ```
 
+6. Run real stress test
+
+```bash
+make stress-real
+```
+
+7. Run altered easy stress test
+
+```bash
+make stress-easy
+```
+
+8. Run altered medium stress test
+
+```bash
+make stress-medium
+```
+
+9. Run altered hard stress test
+
+```bash
+make stress-hard
+```
+
 ## Author (Identitas Pembuat)
 
 |   NIM    |           Nama           |

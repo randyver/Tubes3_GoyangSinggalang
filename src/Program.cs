@@ -56,7 +56,7 @@ sealed class Program
         else if (args.Length > 0 && args[0] == "--stress")
         {
             // Run stress test statistics
-            Cli.Cli.RunStress();
+            Cli.Cli.RunStress(args[1]);
             return;
         }
         else if (args.Length > 0 && args[0] == "--cli")
