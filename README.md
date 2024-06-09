@@ -34,26 +34,74 @@ CREATE USER 'college'@'localhost' IDENTIFIED BY '12345';
 GRANT ALL PRIVILEGES ON tubes3_stima.* TO 'college'@'localhost';
 ```
 
-4. Load hasil seeding (dump pada src/db/seeded.sql)
+4. Load hasil seeding encrypted (dump pada src/db/seeded.sql)
 
 ```bash
-chmod +x load-dump.sh
-```
-
-```bash
-./load-dump.sh
+make load-dump
 ```
 
 ### Jalankan Program
 
-1. Jalankan script shell gui.sh
+Jalankan script shell gui.sh
 
 ```bash
-chmod +x gui.sh
+make run
 ```
 
+### Beberapa command tambahan
+
+1. Migrate / import schema database dengan encryption
+
 ```bash
-./gui.sh
+make migrate
+```
+
+2. Generate seeding baru dengan encryption AES
+
+```bash
+make seed
+```
+
+3. Migrate / import schema database raw (tanpa encryption)
+
+```bash
+make raw-migrate
+```
+
+4. Generate seed baru tanpa encryption sama sekali
+
+```bash
+make raw-seed
+```
+
+5. Convert hasil dump test case asisten ke schema enkripsi serta menenkripsi data-datanya juga. (Pastikan data sudah diload terlebih dahulu, bagian ini hanya mengkonversikan saja.)
+
+```bash
+make convert-dump
+```
+
+6. Run real stress test
+
+```bash
+make stress-real
+```
+
+7. Run altered easy stress test
+
+```bash
+make stress-easy
+```
+
+8. Run altered medium stress test
+
+```bash
+make stress-medium
+```
+
+9. Run altered hard stress test
+
+```bash
+make stress-hard
 ```
 
 ## Author (Identitas Pembuat)

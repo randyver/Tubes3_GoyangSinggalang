@@ -1,2 +1,0 @@
-cd src
-dotnet run

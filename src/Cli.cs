@@ -24,12 +24,12 @@ namespace Cli
                 Console.WriteLine();
             }
 
-            // // Print result
-            // for (int i = 0; i < fingerprints.Count; i++)
-            // {
-            //     fingerprints[i].Print();
-            //     Console.WriteLine();
-            // }
+            // Print result
+            for (int i = 0; i < fingerprints.Count; i++)
+            {
+                fingerprints[i].Print();
+                Console.WriteLine();
+            }
         }
         public static void RunAes()
         {
@@ -131,10 +131,32 @@ namespace Cli
             }
         }
 
-        public static void RunStress()
+        public static void RunStress(string testType)
         {
+
             // Test directory path
-            string directoryPath = "../test/altered-easy/";
+            string directoryPath;
+            if (testType == "real")
+            {
+                directoryPath = "../test/real/";
+            }
+            else if (testType == "altered-easy")
+            {
+                directoryPath = "../test/altered-easy/";
+            }
+            else if (testType == "altered-medium")
+            {
+                directoryPath = "../test/altered-medium/";
+            }
+            else if (testType == "altered-hard")
+            {
+                directoryPath = "../test/altered-hard/";
+            }
+            else
+            {
+                Console.WriteLine("Invalid test type");
+                return;
+            }
 
             // Get all image in the directory
             string[] files = System.IO.Directory.GetFiles(directoryPath);
