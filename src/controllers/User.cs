@@ -7,6 +7,7 @@ namespace Controllers
 {
     public class User
     {
+        // HANDLE ENCRYPTED DATA
         public static List<Models.User> GetUsers()
         {
             // Aes decryptor
@@ -89,6 +90,73 @@ namespace Controllers
             return users;
         }
 
+        // GET ALL USERS WITHOUT HANDLING ENCRYPTION DATA, RAW.
+        public static List<Models.User> GetRawUsers()
+        {
+            // Get connection
+            using MySqlConnection connection = Db.Db.GetConnection();
+
+            // Query
+            string query = "SELECT * FROM biodata";
+
+            // Execute query
+            List<Models.User> users = [];
+
+            try
+            {
+                // Execute query
+                using MySqlCommand command = new(query, connection);
+                using MySqlDataReader reader = command.ExecuteReader();
+
+                // Parse
+                while (reader.Read())
+                {
+                    // Get encrypted data
+                    string nik = reader.GetString("NIK");
+                    string nama = reader.GetString("nama");
+                    string tempatLahir = reader.GetString("tempat_lahir");
+                    DateTime tanggalLahir = reader.GetDateTime("tanggal_lahir").Date;
+                    string jenisKelamin = reader.GetString("jenis_kelamin");
+                    string golonganDarah = reader.GetString("golongan_darah");
+                    string alamat = reader.GetString("alamat");
+                    string agama = reader.GetString("agama");
+                    string statusPerkawinan = reader.GetString("status_perkawinan");
+                    string pekerjaan = reader.GetString("pekerjaan");
+                    string kewarganegaraan = reader.GetString("kewarganegaraan");
+
+                    // Add user
+                    Models.User user = new(
+                        nik,
+                        nama,
+                        tempatLahir,
+                        tanggalLahir,
+                        jenisKelamin,
+                        golonganDarah,
+                        alamat,
+                        agama,
+                        statusPerkawinan,
+                        pekerjaan,
+                        kewarganegaraan
+                    );
+
+                    users.Add(user);
+                }
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Db.Db.CloseConnection();
+            }
+
+            // Return
+            return users;
+        }
+
+
+        // HANDLE ENCRYPTED DATA
         // Get user from nama (not handled if nama is alay but already handle encrypted data in the database)
         public static Models.User? GetUser(string nama)
         {

@@ -24,12 +24,12 @@ namespace Cli
                 Console.WriteLine();
             }
 
-            // // Print result
-            // for (int i = 0; i < fingerprints.Count; i++)
-            // {
-            //     fingerprints[i].Print();
-            //     Console.WriteLine();
-            // }
+            // Print result
+            for (int i = 0; i < fingerprints.Count; i++)
+            {
+                fingerprints[i].Print();
+                Console.WriteLine();
+            }
         }
         public static void RunAes()
         {

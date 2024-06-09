@@ -25,18 +25,37 @@ sealed class Program
         }
         else if (args.Length > 0 && args[0] == "--seed")
         {
-            // Run the seed
+            // Generated encrypted seeding
             Db.Db.Seed();
             return;
         }
         else if (args.Length > 0 && args[0] == "--load-dump")
         {
-            // Run the test
+            // Load encrypted seed from db/seeded.sql
             Db.Db.LoadDump();
+            return;
+        }
+        else if (args.Length > 0 && args[0] == "--raw-migrate")
+        {
+            // Generate raw (unecrypted seeding)
+            Db.Db.RawMigrate();
+            return;
+        }
+        else if (args.Length > 0 && args[0] == "--raw-seed")
+        {
+            // Generate raw (unecrypted seeding)
+            Db.Db.RawSeed();
+            return;
+        }
+        else if (args.Length > 0 && args[0] == "--convert-dump")
+        {
+            // Convert from kating's dump to converted dump
+            Db.Db.ConvertToEncrypted();
             return;
         }
         else if (args.Length > 0 && args[0] == "--stress")
         {
+            // Run stress test statistics
             Cli.Cli.RunStress();
             return;
         }
@@ -44,7 +63,7 @@ sealed class Program
         {
             // Only for test cli program
             // Cli.Cli.RunRegex();
-            Cli.Cli.RunStress();
+            Cli.Cli.RunQuery();
             return;
         }
         else
