@@ -148,7 +148,7 @@ namespace Db
                     string nama = shouldAlay ? Lib.Utils.GetBahasaAlay(names[i]) : names[i];
                     string nik = (i + 1).ToString();
                     string tempatLahir = new Faker().Address.City();
-                    string tanggalLahir = new Faker().Person.DateOfBirth.ToString();
+                    string tanggalLahir = new Faker().Person.DateOfBirth.ToString("yyyy-MM-dd");
                     string jenisKelamin = new Random().Next(0, 2) == 0 ? "Laki-Laki" : "Perempuan";
                     string golonganDarah = golonganDarahEnum[new Random().Next(0, 4)];
                     string alamat = new Faker().Address.FullAddress();

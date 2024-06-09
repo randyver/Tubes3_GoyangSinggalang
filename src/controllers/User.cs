@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System;
+using System.Globalization;
 
 namespace Controllers
 {
@@ -46,7 +47,9 @@ namespace Controllers
                     string decryptedNik = aes.Decrypt(encryptedNik);
                     string decryptedNama = aes.Decrypt(encryptedNama);
                     string decryptedTempatLahir = aes.Decrypt(encryptedTempatLahir);
-                    DateTime decryptedTanggalLahir = DateTime.Parse(aes.Decrypt(encryptedTanggalLahir));
+                    // Console.WriteLine(aes.Decrypt(encryptedTanggalLahir));
+                    DateTime decryptedTanggalLahir = DateTime.ParseExact(aes.Decrypt(encryptedTanggalLahir), "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None);
+                    // Console.WriteLine(decryptedTanggalLahir.ToString());
                     string decryptedJenisKelamin = aes.Decrypt(encryptedJenisKelamin);
                     string decryptedGolonganDarah = aes.Decrypt(encryptedGolonganDarah);
                     string decryptedAlamat = aes.Decrypt(encryptedAlamat);
