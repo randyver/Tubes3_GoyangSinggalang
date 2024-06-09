@@ -171,7 +171,11 @@ namespace Db
                     string kewarganegaraanEncrypted = aes.Encrypt(kewarganegaraan).Replace("'", @"\'");
 
                     // Insert data
-                    command.CommandText = $"INSERT INTO biodata (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) VALUES ('{nikEncrypted}', '{namaEncrypted}', '{tempatLahirEncrypted}', '{tanggalLahirEncrypted}', '{jenisKelaminEncrypted}', '{golonganDarahEncrypted}', '{alamatEncrypted}', '{agamaEncrypted}', '{statusPerkawinanEncrypted}', '{pekerjaanEncrypted}', '{kewarganegaraanEncrypted}')";
+                    command.CommandText = @$"INSERT INTO biodata 
+                    (nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan) 
+                    VALUES 
+                    ('{nikEncrypted}', '{namaEncrypted}', '{tempatLahirEncrypted}', '{tanggalLahirEncrypted}', '{jenisKelaminEncrypted}', '{golonganDarahEncrypted}'
+                    , '{alamatEncrypted}', '{agamaEncrypted}', '{statusPerkawinanEncrypted}', '{pekerjaanEncrypted}', '{kewarganegaraanEncrypted}')";
                     command.ExecuteNonQuery();
                 }
 

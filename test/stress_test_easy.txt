@@ -1,1117 +1,1734 @@
-/home/ganadipa/code/kuliah/GoyangSinggalang/src/ViewModels/MainWindowViewModel.cs(433,34): warning CS8601: Possible null reference assignment. [/home/ganadipa/code/kuliah/GoyangSinggalang/src/src.csproj]
+/home/ganadipa/code/kuliah/GoyangSinggalang/src/ViewModels/MainWindowViewModel.cs(434,34): warning CS8601: Possible null reference assignment. [/home/ganadipa/code/kuliah/GoyangSinggalang/src/src.csproj]
 /home/ganadipa/code/kuliah/GoyangSinggalang/src/ViewModels/MainWindowViewModel.cs(335,20): warning CS8618: Non-nullable field '_resultName' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/home/ganadipa/code/kuliah/GoyangSinggalang/src/src.csproj]
 File: ../test/altered-easy/514__F_Right_little_finger_Zcut.BMP
-0.9285714285714286
-0.9285714285714286
-Match
-Correct: 1/1
+No data found so we use Levenshtein Distance
+0.9394463667820069
+Matched with ../test/real/514__F_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 1/1
+Match but INCORRECT: 0/1
+No data found: 0/1
 
 
 File: ../test/altered-easy/136__F_Left_little_finger_Zcut.BMP
-0.9251559251559252
-0.9251559251559252
-Match
-Correct: 2/2
+No data found so we use Levenshtein Distance
+0.9333333333333333
+Matched with ../test/real/136__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 2/2
+Match but INCORRECT: 0/2
+No data found: 0/2
 
 
 File: ../test/altered-easy/218__M_Left_index_finger_CR.BMP
-0.8090225563909774
-0.8090225563909774
-Match
-Correct: 3/3
+No data found so we use Levenshtein Distance
+0.8315068493150685
+Matched with ../test/real/218__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 3/3
+Match but INCORRECT: 0/3
+No data found: 0/3
 
 
 File: ../test/altered-easy/205__F_Left_little_finger_Zcut.BMP
-0.9004854368932039
-0.9004854368932039
-Match
-Correct: 4/4
+0.9163346613545816
+Matched with ../test/real/205__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 4/4
+Match but INCORRECT: 0/4
+No data found: 0/4
 
 
 File: ../test/altered-easy/239__M_Right_middle_finger_Zcut.BMP
-0.9479940564635958
-0.9479940564635958
-Match
-Correct: 5/5
+0.9555555555555556
+Matched with ../test/real/239__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 5/5
+Match but INCORRECT: 0/5
+No data found: 0/5
 
 
 File: ../test/altered-easy/506__M_Left_ring_finger_CR.BMP
-0.8408360128617364
-0.8408360128617364
-Match
-Correct: 6/6
+No data found so we use Levenshtein Distance
+0.9199999999999999
+Matched with ../test/real/506__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 6/6
+Match but INCORRECT: 0/6
+No data found: 0/6
 
 
 File: ../test/altered-easy/188__M_Left_little_finger_Zcut.BMP
-0.9365079365079365
-0.9365079365079365
-Match
-Correct: 7/7
+0.9376623376623376
+Matched with ../test/real/188__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 7/7
+Match but INCORRECT: 0/7
+No data found: 0/7
 
 
 File: ../test/altered-easy/239__M_Left_little_finger_CR.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 8/8
+Match & CORRECT: 7/8
+Match but INCORRECT: 0/8
+No data found: 1/8
 
 
 File: ../test/altered-easy/366__M_Right_index_finger_Zcut.BMP
-0.9392185238784371
-0.9392185238784371
-Match
-Correct: 9/9
+0.9493827160493827
+Matched with ../test/real/366__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 8/9
+Match but INCORRECT: 0/9
+No data found: 1/9
 
 
 File: ../test/altered-easy/220__F_Left_index_finger_Obl.BMP
-0.8007915567282322
-0.8007915567282322
-Match
-Correct: 10/10
+0.8152173913043479
+Matched with ../test/real/220__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 9/10
+Match but INCORRECT: 0/10
+No data found: 1/10
 
 
 File: ../test/altered-easy/194__M_Left_little_finger_CR.BMP
-0.8673602080624188
-0.8673602080624188
-Match
-Correct: 11/11
+No data found so we use Levenshtein Distance
+0.9
+Matched with ../test/real/194__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 10/11
+Match but INCORRECT: 0/11
+No data found: 1/11
 
 
 File: ../test/altered-easy/283__M_Right_ring_finger_CR.BMP
-0.8890229191797346
-0.8890229191797346
-Match
-Correct: 12/12
+No data found so we use Levenshtein Distance
+0.9013303769401331
+Matched with ../test/real/283__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 11/12
+Match but INCORRECT: 0/12
+No data found: 1/12
 
 
 File: ../test/altered-easy/71__M_Left_little_finger_CR.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 13/13
+Match & CORRECT: 11/13
+Match but INCORRECT: 0/13
+No data found: 2/13
 
 
 File: ../test/altered-easy/106__M_Right_ring_finger_Obl.BMP
-0.8721088435374149
-0.8721088435374149
-Match
-Correct: 14/14
+0.8859543817527011
+Matched with ../test/real/106__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 12/14
+Match but INCORRECT: 0/14
+No data found: 2/14
 
 
 File: ../test/altered-easy/578__M_Right_thumb_finger_CR.BMP
-0.891726251276813
-0.891726251276813
-Match
-Correct: 15/15
+0.8952569169960474
+Matched with ../test/real/578__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 13/15
+Match but INCORRECT: 0/15
+No data found: 2/15
 
 
 File: ../test/altered-easy/357__M_Left_ring_finger_CR.BMP
-0.8297491039426523
-0.8297491039426523
-Match
-Correct: 16/16
+No data found so we use Levenshtein Distance
+0.8580152671755725
+Matched with ../test/real/357__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 14/16
+Match but INCORRECT: 0/16
+No data found: 2/16
 
 
 File: ../test/altered-easy/218__M_Left_middle_finger_Zcut.BMP
-0.9455882352941176
-0.9455882352941176
-Match
-Correct: 17/17
+0.9449793672627236
+Matched with ../test/real/218__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 15/17
+Match but INCORRECT: 0/17
+No data found: 2/17
 
 
 File: ../test/altered-easy/593__M_Left_little_finger_Zcut.BMP
-0.9615384615384616
-0.9615384615384616
-Match
-Correct: 18/18
+No data found so we use Levenshtein Distance
+0.9630071599045346
+Matched with ../test/real/593__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 16/18
+Match but INCORRECT: 0/18
+No data found: 2/18
 
 
 File: ../test/altered-easy/197__M_Left_middle_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 19/19
+0.8823529411764706
+Matched with ../test/real/197__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 17/19
+Match but INCORRECT: 0/19
+No data found: 2/19
 
 
 File: ../test/altered-easy/272__M_Left_little_finger_Zcut.BMP
-0.9282786885245902
-0.9282786885245902
-Match
-Correct: 20/20
+0.9420289855072463
+Matched with ../test/real/272__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 18/20
+Match but INCORRECT: 0/20
+No data found: 2/20
 
 
 File: ../test/altered-easy/367__M_Right_thumb_finger_Zcut.BMP
-0.9301994301994302
-0.9301994301994302
-Match
-Correct: 21/21
+0.9419035846724351
+Matched with ../test/real/367__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 19/21
+Match but INCORRECT: 0/21
+No data found: 2/21
 
 
 File: ../test/altered-easy/417__M_Left_little_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 22/22
+0.8548168249660787
+Matched with ../test/real/417__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 20/22
+Match but INCORRECT: 0/22
+No data found: 2/22
 
 
 File: ../test/altered-easy/151__M_Left_ring_finger_Zcut.BMP
-0.9409780775716695
-0.9409780775716695
-Match
-Correct: 23/23
+0.9457831325301205
+Matched with ../test/real/151__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 21/23
+Match but INCORRECT: 0/23
+No data found: 2/23
 
 
 File: ../test/altered-easy/105__M_Right_index_finger_Obl.BMP
-0.9034564958283671
-0.9034564958283671
-Match
-Correct: 24/24
+0.9069003285870756
+Matched with ../test/real/105__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 22/24
+Match but INCORRECT: 0/24
+No data found: 2/24
 
 
 File: ../test/altered-easy/346__M_Right_thumb_finger_Obl.BMP
-0.767077267637178
-0.767077267637178
-Match
-Correct: 25/25
+No data found so we use Levenshtein Distance
+0.7834525025536261
+Matched with ../test/real/346__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 23/25
+Match but INCORRECT: 0/25
+No data found: 2/25
 
 
 File: ../test/altered-easy/451__M_Right_middle_finger_Obl.BMP
 No data found so we use Levenshtein Distance
-0.74
-Match
-Correct: 26/26
+0.724
+Matched with ../test/real/451__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 24/26
+Match but INCORRECT: 0/26
+No data found: 2/26
 
 
 File: ../test/altered-easy/191__F_Left_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 27/27
+Match & CORRECT: 24/27
+Match but INCORRECT: 0/27
+No data found: 3/27
 
 
 File: ../test/altered-easy/151__M_Left_thumb_finger_CR.BMP
-0.8731707317073171
-0.8731707317073171
-Match
-Correct: 28/28
+No data found so we use Levenshtein Distance
+0.96
+Matched with ../test/real/151__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 25/28
+Match but INCORRECT: 0/28
+No data found: 3/28
 
 
 File: ../test/altered-easy/350__M_Right_index_finger_CR.BMP
-0.8922558922558923
-0.8922558922558923
-Match
-Correct: 29/29
+No data found so we use Levenshtein Distance
+0.9005291005291005
+Matched with ../test/real/350__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 26/29
+Match but INCORRECT: 0/29
+No data found: 3/29
 
 
 File: ../test/altered-easy/535__M_Right_little_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 30/30
+Match & CORRECT: 26/30
+Match but INCORRECT: 0/30
+No data found: 4/30
 
 
 File: ../test/altered-easy/405__M_Left_ring_finger_Zcut.BMP
-0.9330218068535826
-0.9330218068535826
-Match
-Correct: 31/31
+0.9362606232294618
+Matched with ../test/real/405__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 27/31
+Match but INCORRECT: 0/31
+No data found: 4/31
 
 
 File: ../test/altered-easy/449__F_Left_ring_finger_Zcut.BMP
-0.9499192245557351
-0.9499192245557351
-Match
-Correct: 32/32
+0.9526717557251908
+Matched with ../test/real/449__F_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 28/32
+Match but INCORRECT: 0/32
+No data found: 4/32
 
 
 File: ../test/altered-easy/549__M_Right_little_finger_Zcut.BMP
-0.9322638146167558
-0.9322638146167558
-Match
-Correct: 33/33
+No data found so we use Levenshtein Distance
+0.943683409436834
+Matched with ../test/real/549__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 29/33
+Match but INCORRECT: 0/33
+No data found: 4/33
 
 
 File: ../test/altered-easy/401__M_Right_index_finger_Obl.BMP
-0.9232804232804233
-0.9232804232804233
-Match
-Correct: 34/34
+No data found so we use Levenshtein Distance
+0.9400000000000001
+Matched with ../test/real/401__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 30/34
+Match but INCORRECT: 0/34
+No data found: 4/34
 
 
 File: ../test/altered-easy/47__F_Left_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 35/35
+Match & CORRECT: 30/35
+Match but INCORRECT: 0/35
+No data found: 5/35
 
 
 File: ../test/altered-easy/186__M_Right_middle_finger_Obl.BMP
-0.867027027027027
-0.867027027027027
-Match
-Correct: 36/36
+No data found so we use Levenshtein Distance
+0.9492307692307692
+Matched with ../test/real/186__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 31/36
+Match but INCORRECT: 0/36
+No data found: 5/36
 
 
 File: ../test/altered-easy/306__M_Right_middle_finger_CR.BMP
-0.885676741130092
-0.885676741130092
-Match
-Correct: 37/37
+0.9091891891891892
+Matched with ../test/real/306__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 32/37
+Match but INCORRECT: 0/37
+No data found: 5/37
 
 
 File: ../test/altered-easy/184__M_Left_ring_finger_Obl.BMP
-0.8268974700399467
-0.8268974700399467
-Match
-Correct: 38/38
+No data found so we use Levenshtein Distance
+0.848375451263538
+Matched with ../test/real/184__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 33/38
+Match but INCORRECT: 0/38
+No data found: 5/38
 
 
 File: ../test/altered-easy/28__M_Right_little_finger_CR.BMP
-0.8641975308641976
-0.8641975308641976
-Match
-Correct: 39/39
+No data found so we use Levenshtein Distance
+0.8798920377867746
+Matched with ../test/real/28__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 34/39
+Match but INCORRECT: 0/39
+No data found: 5/39
 
 
 File: ../test/altered-easy/124__M_Right_thumb_finger_Obl.BMP
 No data found so we use Levenshtein Distance
-0.74
-Match
-Correct: 40/40
+0.704
+Matched with ../test/real/124__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 35/40
+Match but INCORRECT: 0/40
+No data found: 5/40
 
 
 File: ../test/altered-easy/387__F_Right_middle_finger_CR.BMP
-0.8243243243243243
-0.8243243243243243
-Match
-Correct: 41/41
+No data found so we use Levenshtein Distance
+0.8476312419974392
+Matched with ../test/real/387__F_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 36/41
+Match but INCORRECT: 0/41
+No data found: 5/41
 
 
 File: ../test/altered-easy/393__M_Left_ring_finger_Zcut.BMP
-0.9491298527443106
-0.9491298527443106
-Match
-Correct: 42/42
+No data found so we use Levenshtein Distance
+0.9605263157894737
+Matched with ../test/real/393__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 37/42
+Match but INCORRECT: 0/42
+No data found: 5/42
 
 
 File: ../test/altered-easy/85__M_Left_middle_finger_Obl.BMP
-0.8926701570680629
-0.8926701570680629
-Match
-Correct: 43/43
+No data found so we use Levenshtein Distance
+0.9400000000000001
+Matched with ../test/real/85__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 38/43
+Match but INCORRECT: 0/43
+No data found: 5/43
 
 
 File: ../test/altered-easy/65__M_Right_thumb_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 44/44
+0.9039256198347108
+Matched with ../test/real/65__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 39/44
+Match but INCORRECT: 0/44
+No data found: 5/44
 
 
 File: ../test/altered-easy/450__M_Right_thumb_finger_Zcut.BMP
-0.9301587301587302
-0.9301587301587302
-Match
-Correct: 45/45
+0.9404432132963989
+Matched with ../test/real/450__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 40/45
+Match but INCORRECT: 0/45
+No data found: 5/45
 
 
 File: ../test/altered-easy/165__M_Right_middle_finger_Zcut.BMP
-0.920303605313093
-0.920303605313093
-Match
-Correct: 46/46
+No data found so we use Levenshtein Distance
+0.9213675213675214
+Matched with ../test/real/165__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 41/46
+Match but INCORRECT: 0/46
+No data found: 5/46
 
 
 File: ../test/altered-easy/371__M_Right_index_finger_Zcut.BMP
-0.9117117117117117
-0.9117117117117117
-Match
-Correct: 47/47
+0.9298780487804879
+Matched with ../test/real/371__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 42/47
+Match but INCORRECT: 0/47
+No data found: 5/47
 
 
 File: ../test/altered-easy/345__M_Right_middle_finger_Obl.BMP
-0.8460634547591069
-0.8460634547591069
-Match
-Correct: 48/48
+No data found so we use Levenshtein Distance
+0.8516057585825028
+Matched with ../test/real/345__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 43/48
+Match but INCORRECT: 0/48
+No data found: 5/48
 
 
 File: ../test/altered-easy/445__M_Left_thumb_finger_Obl.BMP
-0.8997584541062802
-0.8997584541062802
-Match
-Correct: 49/49
+No data found so we use Levenshtein Distance
+0.9102132435465768
+Matched with ../test/real/445__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 44/49
+Match but INCORRECT: 0/49
+No data found: 5/49
 
 
 File: ../test/altered-easy/291__M_Left_little_finger_CR.BMP
-0.80859375
-0.80859375
-Match
-Correct: 50/50
+No data found so we use Levenshtein Distance
+0.8350877192982455
+Matched with ../test/real/291__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 45/50
+Match but INCORRECT: 0/50
+No data found: 5/50
 
 
 File: ../test/altered-easy/427__M_Right_little_finger_Zcut.BMP
-0.9238578680203046
-0.9238578680203046
-Match
-Correct: 51/51
+No data found so we use Levenshtein Distance
+0.9345238095238095
+Matched with ../test/real/427__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 46/51
+Match but INCORRECT: 0/51
+No data found: 5/51
 
 
 File: ../test/altered-easy/183__M_Left_middle_finger_CR.BMP
-0.8656934306569343
-0.8656934306569343
-Match
-Correct: 52/52
+No data found so we use Levenshtein Distance
+0.8805774278215223
+Matched with ../test/real/183__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 47/52
+Match but INCORRECT: 0/52
+No data found: 5/52
 
 
 File: ../test/altered-easy/534__F_Right_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 53/53
+Match & CORRECT: 47/53
+Match but INCORRECT: 0/53
+No data found: 6/53
 
 
 File: ../test/altered-easy/106__M_Left_index_finger_Zcut.BMP
-0.9486803519061584
-0.9486803519061584
-Match
-Correct: 54/54
+No data found so we use Levenshtein Distance
+0.9614906832298137
+Matched with ../test/real/106__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 48/54
+Match but INCORRECT: 0/54
+No data found: 6/54
 
 
 File: ../test/altered-easy/562__F_Right_thumb_finger_CR.BMP
-0.3267326732673267
-0.3267326732673267
-Not Match
-Correct: 54/55
+0.91991991991992
+Matched with ../test/real/562__F_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 49/55
+Match but INCORRECT: 0/55
+No data found: 6/55
 
 
 File: ../test/altered-easy/29__F_Right_thumb_finger_Zcut.BMP
-0.95578231292517
-0.95578231292517
-Match
-Correct: 55/56
+No data found so we use Levenshtein Distance
+0.9555785123966942
+Matched with ../test/real/29__F_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 50/56
+Match but INCORRECT: 0/56
+No data found: 6/56
 
 
 File: ../test/altered-easy/498__M_Right_ring_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 56/57
+0.8621951219512195
+Matched with ../test/real/498__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 51/57
+Match but INCORRECT: 0/57
+No data found: 6/57
 
 
 File: ../test/altered-easy/600__M_Right_ring_finger_CR.BMP
-0.817717206132879
-0.817717206132879
-Match
-Correct: 57/58
+No data found so we use Levenshtein Distance
+0.8385185185185186
+Matched with ../test/real/600__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 52/58
+Match but INCORRECT: 0/58
+No data found: 6/58
 
 
 File: ../test/altered-easy/204__F_Left_index_finger_Obl.BMP
-0.8190045248868778
-0.8190045248868778
-Match
-Correct: 58/59
+No data found so we use Levenshtein Distance
+0.831043956043956
+Matched with ../test/real/204__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 53/59
+Match but INCORRECT: 0/59
+No data found: 6/59
 
 
 File: ../test/altered-easy/581__F_Left_index_finger_CR.BMP
 No data found so we use Levenshtein Distance
-0.78
-Match
-Correct: 59/60
+0.74
+Matched with ../test/real/581__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 54/60
+Match but INCORRECT: 0/60
+No data found: 6/60
 
 
 File: ../test/altered-easy/474__M_Right_index_finger_Zcut.BMP
-0.9583333333333334
-0.9583333333333334
-Match
-Correct: 60/61
+0.9641618497109826
+Matched with ../test/real/474__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 55/61
+Match but INCORRECT: 0/61
+No data found: 6/61
 
 
 File: ../test/altered-easy/360__M_Left_middle_finger_Obl.BMP
-0.9
-0.9
-Match
-Correct: 61/62
+0.9230769230769231
+Matched with ../test/real/360__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 56/62
+Match but INCORRECT: 0/62
+No data found: 6/62
 
 
 File: ../test/altered-easy/465__F_Left_ring_finger_Zcut.BMP
-0.9523141654978962
-0.9523141654978962
-Match
-Correct: 62/63
+0.9597560975609756
+Matched with ../test/real/465__F_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 57/63
+Match but INCORRECT: 0/63
+No data found: 6/63
 
 
 File: ../test/altered-easy/53__M_Left_middle_finger_Obl.BMP
-0.040443971415539015
-0.040443971415539015
-Not Match
-Correct: 62/64
+0.9561076604554866
+Matched with ../test/real/53__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 58/64
+Match but INCORRECT: 0/64
+No data found: 6/64
 
 
 File: ../test/altered-easy/139__M_Left_middle_finger_Zcut.BMP
-0.9579180509413068
-0.9579180509413068
-Match
-Correct: 63/65
+0.9582027168234065
+Matched with ../test/real/139__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 59/65
+Match but INCORRECT: 0/65
+No data found: 6/65
 
 
 File: ../test/altered-easy/288__M_Left_middle_finger_CR.BMP
-0.8831003811944091
-0.8831003811944091
-Match
-Correct: 64/66
+No data found so we use Levenshtein Distance
+0.9199999999999999
+Matched with ../test/real/288__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 60/66
+Match but INCORRECT: 0/66
+No data found: 6/66
 
 
 File: ../test/altered-easy/338__M_Left_thumb_finger_Obl.BMP
-0.8938775510204082
-0.8938775510204082
-Match
-Correct: 65/67
+0.8957575757575758
+Matched with ../test/real/338__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 61/67
+Match but INCORRECT: 0/67
+No data found: 6/67
 
 
 File: ../test/altered-easy/471__M_Left_little_finger_Obl.BMP
-0.8458574181117534
-0.8458574181117534
-Match
-Correct: 66/68
+No data found so we use Levenshtein Distance
+0.864957264957265
+Matched with ../test/real/471__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 62/68
+Match but INCORRECT: 0/68
+No data found: 6/68
 
 
 File: ../test/altered-easy/103__F_Left_index_finger_Zcut.BMP
-0.948509485094851
-0.948509485094851
-Match
-Correct: 67/69
+0.9468085106382979
+Matched with ../test/real/103__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 63/69
+Match but INCORRECT: 0/69
+No data found: 6/69
 
 
 File: ../test/altered-easy/127__F_Left_middle_finger_Obl.BMP
-0.9423076923076923
-0.9423076923076923
-Match
-Correct: 68/70
+No data found so we use Levenshtein Distance
+0.3107692307692308
+Matched with ../test/real/354__M_Right_index_finger.BMP
+Matched but INCORRECT
+Match & CORRECT: 63/70
+Match but INCORRECT: 1/70
+No data found: 6/70
 
 
 File: ../test/altered-easy/218__M_Right_middle_finger_CR.BMP
-0.8854875283446713
-0.8854875283446713
-Match
-Correct: 69/71
+0.8964059196617337
+Matched with ../test/real/218__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 64/71
+Match but INCORRECT: 1/71
+No data found: 6/71
 
 
 File: ../test/altered-easy/378__F_Left_thumb_finger_Obl.BMP
-0.8653846153846154
-0.8653846153846154
-Match
-Correct: 70/72
+0.8800448430493274
+Matched with ../test/real/378__F_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 65/72
+Match but INCORRECT: 1/72
+No data found: 6/72
 
 
 File: ../test/altered-easy/161__F_Right_thumb_finger_Obl.BMP
-0.8891377379619261
-0.8891377379619261
-Match
-Correct: 71/73
+No data found so we use Levenshtein Distance
+No data found
+Match & CORRECT: 65/73
+Match but INCORRECT: 1/73
+No data found: 7/73
 
 
 File: ../test/altered-easy/416__M_Left_middle_finger_CR.BMP
 No data found so we use Levenshtein Distance
-No data found
-Correct: 72/74
+0.43784615384615383
+Matched with ../test/real/399__M_Right_thumb_finger.BMP
+Matched but INCORRECT
+Match & CORRECT: 65/74
+Match but INCORRECT: 2/74
+No data found: 7/74
 
 
 File: ../test/altered-easy/293__F_Right_thumb_finger_Zcut.BMP
-0.951935914552737
-0.951935914552737
-Match
-Correct: 73/75
+0.9558472553699284
+Matched with ../test/real/293__F_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 66/75
+Match but INCORRECT: 2/75
+No data found: 7/75
 
 
 File: ../test/altered-easy/425__M_Left_ring_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 74/76
+0.8801546391752577
+Matched with ../test/real/425__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 67/76
+Match but INCORRECT: 2/76
+No data found: 7/76
 
 
 File: ../test/altered-easy/320__M_Left_middle_finger_Obl.BMP
-0.9317851959361393
-0.9317851959361393
-Match
-Correct: 75/77
+No data found so we use Levenshtein Distance
+No data found
+Match & CORRECT: 67/77
+Match but INCORRECT: 2/77
+No data found: 8/77
 
 
 File: ../test/altered-easy/349__M_Right_thumb_finger_Obl.BMP
-0.36363636363636365
-0.36363636363636365
-Not Match
-Correct: 75/78
+No data found
+Match & CORRECT: 67/78
+Match but INCORRECT: 2/78
+No data found: 9/78
 
 
 File: ../test/altered-easy/87__M_Right_middle_finger_Zcut.BMP
-0.9475
-0.9475
-Match
-Correct: 76/79
+No data found so we use Levenshtein Distance
+0.9460390355912744
+Matched with ../test/real/87__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 68/79
+Match but INCORRECT: 2/79
+No data found: 9/79
 
 
 File: ../test/altered-easy/115__F_Right_thumb_finger_CR.BMP
-0.8977932636469221
-0.8977932636469221
-Match
-Correct: 77/80
+0.9080338266384778
+Matched with ../test/real/115__F_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 69/80
+Match but INCORRECT: 2/80
+No data found: 9/80
 
 
 File: ../test/altered-easy/75__F_Right_index_finger_CR.BMP
-0.8544668587896254
-0.8544668587896254
-Match
-Correct: 78/81
+No data found so we use Levenshtein Distance
+0.8688311688311688
+Matched with ../test/real/75__F_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 70/81
+Match but INCORRECT: 2/81
+No data found: 9/81
 
 
 File: ../test/altered-easy/185__M_Left_index_finger_CR.BMP
-0.7755102040816326
-0.7755102040816326
-Match
-Correct: 79/82
+No data found so we use Levenshtein Distance
+0.8072487644151565
+Matched with ../test/real/185__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 71/82
+Match but INCORRECT: 2/82
+No data found: 9/82
 
 
 File: ../test/altered-easy/281__M_Left_ring_finger_Zcut.BMP
-0.9568106312292359
-0.9568106312292359
-Match
-Correct: 80/83
+0.9591419816138917
+Matched with ../test/real/281__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 72/83
+Match but INCORRECT: 2/83
+No data found: 9/83
 
 
 File: ../test/altered-easy/572__F_Left_little_finger_Zcut.BMP
-0.8977272727272727
-0.8977272727272727
-Match
-Correct: 81/84
+No data found so we use Levenshtein Distance
+0.9134438305709024
+Matched with ../test/real/572__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 73/84
+Match but INCORRECT: 2/84
+No data found: 9/84
 
 
 File: ../test/altered-easy/36__M_Left_middle_finger_CR.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 82/85
+Match & CORRECT: 73/85
+Match but INCORRECT: 2/85
+No data found: 10/85
 
 
 File: ../test/altered-easy/208__M_Right_little_finger_Obl.BMP
-0.8278805120910384
-0.8278805120910384
-Match
-Correct: 83/86
+No data found so we use Levenshtein Distance
+0.8567901234567901
+Matched with ../test/real/208__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 74/86
+Match but INCORRECT: 2/86
+No data found: 10/86
 
 
 File: ../test/altered-easy/297__M_Left_middle_finger_Zcut.BMP
-0.9304635761589404
-0.9304635761589404
-Match
-Correct: 84/87
+No data found so we use Levenshtein Distance
+0.9312762973352033
+Matched with ../test/real/297__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 75/87
+Match but INCORRECT: 2/87
+No data found: 10/87
 
 
 File: ../test/altered-easy/279__M_Left_middle_finger_Obl.BMP
-0.8455988455988456
-0.8455988455988456
-Match
-Correct: 85/88
+0.845945945945946
+Matched with ../test/real/279__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 76/88
+Match but INCORRECT: 2/88
+No data found: 10/88
 
 
 File: ../test/altered-easy/214__M_Right_little_finger_Zcut.BMP
-0.8791773778920309
-0.8791773778920309
-Match
-Correct: 86/89
+0.9198664440734557
+Matched with ../test/real/214__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 77/89
+Match but INCORRECT: 2/89
+No data found: 10/89
 
 
 File: ../test/altered-easy/92__F_Left_little_finger_Obl.BMP
-0.8136792452830188
-0.8136792452830188
-Match
-Correct: 87/90
+No data found so we use Levenshtein Distance
+0.9415384615384615
+Matched with ../test/real/92__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 78/90
+Match but INCORRECT: 2/90
+No data found: 10/90
 
 
 File: ../test/altered-easy/489__M_Left_little_finger_CR.BMP
-0.8380782918149466
-0.8380782918149466
-Match
-Correct: 88/91
+0.8665667166416792
+Matched with ../test/real/489__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 79/91
+Match but INCORRECT: 2/91
+No data found: 10/91
 
 
 File: ../test/altered-easy/144__M_Right_thumb_finger_Obl.BMP
-0.8337730870712401
-0.8337730870712401
-Match
-Correct: 89/92
+No data found so we use Levenshtein Distance
+0.9
+Matched with ../test/real/144__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 80/92
+Match but INCORRECT: 2/92
+No data found: 10/92
 
 
 File: ../test/altered-easy/344__M_Left_middle_finger_CR.BMP
-0.8513689700130378
-0.8513689700130378
-Match
-Correct: 90/93
+No data found so we use Levenshtein Distance
+0.860381861575179
+Matched with ../test/real/344__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 81/93
+Match but INCORRECT: 2/93
+No data found: 10/93
 
 
 File: ../test/altered-easy/560__F_Left_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 91/94
+Match & CORRECT: 81/94
+Match but INCORRECT: 2/94
+No data found: 11/94
 
 
 File: ../test/altered-easy/440__M_Left_index_finger_Obl.BMP
-0.9079878665318504
-0.9079878665318504
-Match
-Correct: 92/95
+No data found so we use Levenshtein Distance
+0.96
+Matched with ../test/real/440__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 82/95
+Match but INCORRECT: 2/95
+No data found: 11/95
 
 
 File: ../test/altered-easy/129__M_Right_middle_finger_Zcut.BMP
-0.9507119386637459
-0.9507119386637459
-Match
-Correct: 93/96
+0.9555106167846309
+Matched with ../test/real/129__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 83/96
+Match but INCORRECT: 2/96
+No data found: 11/96
 
 
 File: ../test/altered-easy/343__M_Right_ring_finger_Obl.BMP
-0.7993119266055047
-0.7993119266055047
-Match
-Correct: 94/97
+No data found so we use Levenshtein Distance
+0.9200000000000002
+Matched with ../test/real/343__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 84/97
+Match but INCORRECT: 2/97
+No data found: 11/97
 
 
 File: ../test/altered-easy/47__F_Left_middle_finger_Obl.BMP
-0.9529616724738676
-0.9529616724738676
-Match
-Correct: 95/98
+0.947129909365559
+Matched with ../test/real/47__F_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 85/98
+Match but INCORRECT: 2/98
+No data found: 11/98
 
 
 File: ../test/altered-easy/326__M_Left_index_finger_Zcut.BMP
-0.9208523592085236
-0.9208523592085236
-Match
-Correct: 96/99
+No data found so we use Levenshtein Distance
+0.9319999999999999
+Matched with ../test/real/326__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 86/99
+Match but INCORRECT: 2/99
+No data found: 11/99
 
 
 File: ../test/altered-easy/27__M_Right_middle_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 97/100
+0.8622047244094488
+Matched with ../test/real/27__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 87/100
+Match but INCORRECT: 2/100
+No data found: 11/100
 
 
 File: ../test/altered-easy/246__M_Right_little_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 98/101
+0.811554332874828
+Matched with ../test/real/246__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 88/101
+Match but INCORRECT: 2/101
+No data found: 11/101
 
 
 File: ../test/altered-easy/386__M_Right_ring_finger_Zcut.BMP
-0.9400630914826499
-0.9400630914826499
-Match
-Correct: 99/102
+0.942090395480226
+Matched with ../test/real/386__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 89/102
+Match but INCORRECT: 2/102
+No data found: 11/102
 
 
 File: ../test/altered-easy/200__M_Left_little_finger_CR.BMP
-0.8202020202020202
-0.8202020202020202
-Match
-Correct: 100/103
+No data found so we use Levenshtein Distance
+0.8395061728395061
+Matched with ../test/real/200__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 90/103
+Match but INCORRECT: 2/103
+No data found: 11/103
 
 
 File: ../test/altered-easy/20__M_Right_index_finger_CR.BMP
-0.8561253561253561
-0.8561253561253561
-Match
-Correct: 101/104
+No data found so we use Levenshtein Distance
+0.9199999999999999
+Matched with ../test/real/20__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 91/104
+Match but INCORRECT: 2/104
+No data found: 11/104
 
 
 File: ../test/altered-easy/126__F_Right_middle_finger_CR.BMP
-0.8508430609597925
-0.8508430609597925
-Match
-Correct: 102/105
+0.8585017835909632
+Matched with ../test/real/126__F_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 92/105
+Match but INCORRECT: 2/105
+No data found: 11/105
 
 
 File: ../test/altered-easy/284__M_Right_middle_finger_CR.BMP
 No data found so we use Levenshtein Distance
-No data found
-Correct: 103/106
+0.8280000000000001
+Matched with ../test/real/284__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 93/106
+Match but INCORRECT: 2/106
+No data found: 11/106
 
 
 File: ../test/altered-easy/285__M_Left_index_finger_Zcut.BMP
-0.9388888888888889
-0.9388888888888889
-Match
-Correct: 104/107
+0.948019801980198
+Matched with ../test/real/285__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 94/107
+Match but INCORRECT: 2/107
+No data found: 11/107
 
 
 File: ../test/altered-easy/408__M_Right_ring_finger_Obl.BMP
-0.9358372456964006
-0.9358372456964006
-Match
-Correct: 105/108
+0.9390581717451524
+Matched with ../test/real/408__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 95/108
+Match but INCORRECT: 2/108
+No data found: 11/108
 
 
 File: ../test/altered-easy/113__M_Right_ring_finger_Zcut.BMP
-0.9322638146167558
-0.9322638146167558
-Match
-Correct: 106/109
+No data found so we use Levenshtein Distance
+0.9800000000000001
+Matched with ../test/real/113__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 96/109
+Match but INCORRECT: 2/109
+No data found: 11/109
 
 
 File: ../test/altered-easy/33__M_Left_middle_finger_Obl.BMP
-0.8941655359565808
-0.8941655359565808
-Match
-Correct: 107/110
+0.9045848822800495
+Matched with ../test/real/33__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 97/110
+Match but INCORRECT: 2/110
+No data found: 11/110
 
 
 File: ../test/altered-easy/489__M_Right_middle_finger_Zcut.BMP
-0.9576023391812866
-0.9576023391812866
-Match
-Correct: 108/111
+0.9623971797884842
+Matched with ../test/real/489__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 98/111
+Match but INCORRECT: 2/111
+No data found: 11/111
 
 
 File: ../test/altered-easy/32__M_Left_index_finger_Zcut.BMP
-0.942339373970346
-0.942339373970346
-Match
-Correct: 109/112
+0.9475982532751092
+Matched with ../test/real/32__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 99/112
+Match but INCORRECT: 2/112
+No data found: 11/112
 
 
 File: ../test/altered-easy/381__M_Right_thumb_finger_Zcut.BMP
-0.9535135135135135
-0.9535135135135135
-Match
-Correct: 110/113
+0.9622063329928499
+Matched with ../test/real/381__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 100/113
+Match but INCORRECT: 2/113
+No data found: 11/113
 
 
 File: ../test/altered-easy/68__M_Left_little_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 111/114
+0.8670284938941655
+Matched with ../test/real/68__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 101/114
+Match but INCORRECT: 2/114
+No data found: 11/114
 
 
 File: ../test/altered-easy/182__M_Left_index_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 112/115
+0.8451219512195122
+Matched with ../test/real/182__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 102/115
+Match but INCORRECT: 2/115
+No data found: 11/115
 
 
 File: ../test/altered-easy/50__M_Right_middle_finger_Obl.BMP
-0.4326923076923077
-0.4326923076923077
-Not Match
-Correct: 112/116
+No data found so we use Levenshtein Distance
+0.5996923076923076
+Matched with ../test/real/50__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 103/116
+Match but INCORRECT: 2/116
+No data found: 11/116
 
 
 File: ../test/altered-easy/108__M_Left_middle_finger_Zcut.BMP
-0.9493201483312732
-0.9493201483312732
-Match
-Correct: 113/117
+No data found so we use Levenshtein Distance
+0.9551569506726457
+Matched with ../test/real/108__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 104/117
+Match but INCORRECT: 2/117
+No data found: 11/117
 
 
 File: ../test/altered-easy/538__M_Right_ring_finger_CR.BMP
-0.855072463768116
-0.855072463768116
-Match
-Correct: 114/118
+No data found so we use Levenshtein Distance
+0.8799999999999999
+Matched with ../test/real/538__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 105/118
+Match but INCORRECT: 2/118
+No data found: 11/118
 
 
 File: ../test/altered-easy/180__F_Right_middle_finger_Zcut.BMP
-0.9459798994974874
-0.9459798994974874
-Match
-Correct: 115/119
+0.9480968858131488
+Matched with ../test/real/180__F_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 106/119
+Match but INCORRECT: 2/119
+No data found: 11/119
 
 
 File: ../test/altered-easy/203__M_Left_thumb_finger_CR.BMP
-0.8450502152080345
-0.8450502152080345
-Match
-Correct: 116/120
+No data found so we use Levenshtein Distance
+0.8582375478927203
+Matched with ../test/real/203__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 107/120
+Match but INCORRECT: 2/120
+No data found: 11/120
 
 
 File: ../test/altered-easy/226__M_Right_thumb_finger_Obl.BMP
-0.07924836601307195
-0.07924836601307195
-Not Match
-Correct: 116/121
+0.9795066879371702
+Matched with ../test/real/226__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 108/121
+Match but INCORRECT: 2/121
+No data found: 11/121
 
 
 File: ../test/altered-easy/287__M_Left_index_finger_Obl.BMP
-0.9576023391812866
-0.9576023391812866
-Match
-Correct: 117/122
+0.9659224441833137
+Matched with ../test/real/287__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 109/122
+Match but INCORRECT: 2/122
+No data found: 11/122
 
 
 File: ../test/altered-easy/382__M_Right_index_finger_CR.BMP
-0.8518518518518519
-0.8518518518518519
-Match
-Correct: 118/123
+No data found so we use Levenshtein Distance
+0.8700834326579261
+Matched with ../test/real/382__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 110/123
+Match but INCORRECT: 2/123
+No data found: 11/123
 
 
 File: ../test/altered-easy/195__M_Right_index_finger_Obl.BMP
 No data found so we use Levenshtein Distance
-0.8800000000000001
-Match
-Correct: 119/124
+0.86
+Matched with ../test/real/195__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 111/124
+Match but INCORRECT: 2/124
+No data found: 11/124
 
 
 File: ../test/altered-easy/254__M_Right_thumb_finger_CR.BMP
-0.8846611177170036
-0.8846611177170036
-Match
-Correct: 120/125
+No data found so we use Levenshtein Distance
+0.9005347593582887
+Matched with ../test/real/254__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 112/125
+Match but INCORRECT: 2/125
+No data found: 11/125
 
 
 File: ../test/altered-easy/149__F_Left_index_finger_Obl.BMP
-0.8664772727272727
-0.8664772727272727
-Match
-Correct: 121/126
+No data found so we use Levenshtein Distance
+0.8951219512195122
+Matched with ../test/real/149__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 113/126
+Match but INCORRECT: 2/126
+No data found: 11/126
 
 
 File: ../test/altered-easy/395__M_Right_middle_finger_Obl.BMP
-0.8774703557312253
-0.8774703557312253
-Match
-Correct: 122/127
+No data found so we use Levenshtein Distance
+0.8870588235294118
+Matched with ../test/real/395__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 114/127
+Match but INCORRECT: 2/127
+No data found: 11/127
 
 
 File: ../test/altered-easy/491__M_Left_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 123/128
+Match & CORRECT: 114/128
+Match but INCORRECT: 2/128
+No data found: 12/128
 
 
 File: ../test/altered-easy/366__M_Right_index_finger_CR.BMP
-0.8625180897250362
-0.8625180897250362
-Match
-Correct: 124/129
+0.8802469135802469
+Matched with ../test/real/366__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 115/129
+Match but INCORRECT: 2/129
+No data found: 12/129
 
 
 File: ../test/altered-easy/180__F_Left_thumb_finger_CR.BMP
 No data found so we use Levenshtein Distance
-No data found
-Correct: 125/130
+0.8879892037786774
+Matched with ../test/real/180__F_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 116/130
+Match but INCORRECT: 2/130
+No data found: 12/130
 
 
 File: ../test/altered-easy/467__M_Left_little_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 126/131
+0.9122516556291391
+Matched with ../test/real/467__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 117/131
+Match but INCORRECT: 2/131
+No data found: 12/131
 
 
 File: ../test/altered-easy/177__F_Left_ring_finger_Zcut.BMP
-0.9574105621805792
-0.9574105621805792
-Match
-Correct: 127/132
+0.967016491754123
+Matched with ../test/real/177__F_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 118/132
+Match but INCORRECT: 2/132
+No data found: 12/132
 
 
 File: ../test/altered-easy/10__M_Left_thumb_finger_Obl.BMP
-0.8707403055229143
-0.8707403055229143
-Match
-Correct: 128/133
+No data found so we use Levenshtein Distance
+0.8861024033437827
+Matched with ../test/real/10__M_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 119/133
+Match but INCORRECT: 2/133
+No data found: 12/133
 
 
 File: ../test/altered-easy/267__M_Right_middle_finger_Obl.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 129/134
+0.9090909090909091
+Matched with ../test/real/267__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 120/134
+Match but INCORRECT: 2/134
+No data found: 12/134
 
 
 File: ../test/altered-easy/453__F_Right_little_finger_CR.BMP
-0.759765625
-0.759765625
-Match
-Correct: 130/135
+No data found so we use Levenshtein Distance
+0.7915966386554621
+Matched with ../test/real/453__F_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 121/135
+Match but INCORRECT: 2/135
+No data found: 12/135
 
 
 File: ../test/altered-easy/181__M_Right_thumb_finger_Zcut.BMP
-0.9513888888888888
-0.9513888888888888
-Match
-Correct: 131/136
+No data found so we use Levenshtein Distance
+0.954171562867215
+Matched with ../test/real/181__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 122/136
+Match but INCORRECT: 2/136
+No data found: 12/136
 
 
 File: ../test/altered-easy/149__F_Left_little_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 132/137
+0.8412698412698413
+Matched with ../test/real/149__F_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 123/137
+Match but INCORRECT: 2/137
+No data found: 12/137
 
 
 File: ../test/altered-easy/367__M_Left_little_finger_Obl.BMP
-0.7988614800759013
-0.7988614800759013
-Match
-Correct: 133/138
+No data found so we use Levenshtein Distance
+0.8117839607201309
+Matched with ../test/real/367__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 124/138
+Match but INCORRECT: 2/138
+No data found: 12/138
 
 
 File: ../test/altered-easy/330__M_Right_ring_finger_Obl.BMP
-0.7259174311926606
-0.7259174311926606
-Match
-Correct: 134/139
+No data found so we use Levenshtein Distance
+0.7427685950413223
+Matched with ../test/real/330__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 125/139
+Match but INCORRECT: 2/139
+No data found: 12/139
 
 
 File: ../test/altered-easy/272__M_Right_little_finger_CR.BMP
-0.8755555555555555
-0.8755555555555555
-Match
-Correct: 135/140
+No data found so we use Levenshtein Distance
+0.8871989860583016
+Matched with ../test/real/272__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 126/140
+Match but INCORRECT: 2/140
+No data found: 12/140
 
 
 File: ../test/altered-easy/6__M_Right_ring_finger_CR.BMP
-0.8185654008438819
-0.8185654008438819
-Match
-Correct: 136/141
+No data found so we use Levenshtein Distance
+0.8388324873096447
+Matched with ../test/real/6__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 127/141
+Match but INCORRECT: 2/141
+No data found: 12/141
 
 
 File: ../test/altered-easy/439__M_Right_index_finger_CR.BMP
-0.8611898016997167
-0.8611898016997167
-Match
-Correct: 137/142
+0.8735224586288416
+Matched with ../test/real/439__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 128/142
+Match but INCORRECT: 2/142
+No data found: 12/142
 
 
 File: ../test/altered-easy/349__M_Right_ring_finger_Zcut.BMP
-0.9324137931034483
-0.9324137931034483
-Match
-Correct: 138/143
+No data found so we use Levenshtein Distance
+0.9419191919191919
+Matched with ../test/real/349__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 129/143
+Match but INCORRECT: 2/143
+No data found: 12/143
 
 
 File: ../test/altered-easy/172__M_Right_ring_finger_CR.BMP
-0.8685258964143426
-0.8685258964143426
-Match
-Correct: 139/144
+No data found so we use Levenshtein Distance
+0.8710462287104623
+Matched with ../test/real/172__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 130/144
+Match but INCORRECT: 2/144
+No data found: 12/144
 
 
 File: ../test/altered-easy/316__M_Left_little_finger_Obl.BMP
-0.7527733755942948
-0.7527733755942948
-Match
-Correct: 140/145
+No data found so we use Levenshtein Distance
+0.8073510773130546
+Matched with ../test/real/316__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 131/145
+Match but INCORRECT: 2/145
+No data found: 12/145
 
 
 File: ../test/altered-easy/520__M_Right_index_finger_Obl.BMP
-0.8614609571788413
-0.8614609571788413
-Match
-Correct: 141/146
+No data found so we use Levenshtein Distance
+0.8619883040935672
+Matched with ../test/real/520__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 132/146
+Match but INCORRECT: 2/146
+No data found: 12/146
 
 
 File: ../test/altered-easy/230__M_Left_ring_finger_Obl.BMP
-0.8719068413391557
-0.8719068413391557
-Match
-Correct: 142/147
+0.888745148771022
+Matched with ../test/real/230__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 133/147
+Match but INCORRECT: 2/147
+No data found: 12/147
 
 
 File: ../test/altered-easy/270__M_Right_index_finger_Obl.BMP
-0.24171974522292994
-0.24171974522292994
-Not Match
-Correct: 142/148
+0.9869281045751634
+Matched with ../test/real/270__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 134/148
+Match but INCORRECT: 2/148
+No data found: 12/148
 
 
 File: ../test/altered-easy/90__M_Left_middle_finger_Obl.BMP
-0.788515406162465
-0.788515406162465
-Match
-Correct: 143/149
+No data found so we use Levenshtein Distance
+0.9292307692307693
+Matched with ../test/real/90__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 135/149
+Match but INCORRECT: 2/149
+No data found: 12/149
 
 
 File: ../test/altered-easy/467__M_Left_ring_finger_Zcut.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 144/150
+0.9424836601307189
+Matched with ../test/real/467__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 136/150
+Match but INCORRECT: 2/150
+No data found: 12/150
 
 
 File: ../test/altered-easy/350__M_Right_middle_finger_Obl.BMP
-0.9118329466357309
-0.9118329466357309
-Match
-Correct: 145/151
+0.9028925619834711
+Matched with ../test/real/350__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 137/151
+Match but INCORRECT: 2/151
+No data found: 12/151
 
 
 File: ../test/altered-easy/451__M_Right_ring_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 146/152
+0.8893280632411067
+Matched with ../test/real/451__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 138/152
+Match but INCORRECT: 2/152
+No data found: 12/152
 
 
 File: ../test/altered-easy/17__M_Left_little_finger_Obl.BMP
-0.8934817170111288
-0.8934817170111288
-Match
-Correct: 147/153
+No data found so we use Levenshtein Distance
+0.9261538461538462
+Matched with ../test/real/17__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 139/153
+Match but INCORRECT: 2/153
+No data found: 12/153
 
 
 File: ../test/altered-easy/155__M_Left_middle_finger_Zcut.BMP
-0.9517490952955368
-0.9517490952955368
-Match
-Correct: 148/154
+0.9518716577540107
+Matched with ../test/real/155__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 140/154
+Match but INCORRECT: 2/154
+No data found: 12/154
 
 
 File: ../test/altered-easy/284__M_Left_index_finger_Obl.BMP
-0.8425047438330171
-0.8425047438330171
-Match
-Correct: 149/155
+No data found so we use Levenshtein Distance
+0.8602693602693603
+Matched with ../test/real/284__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 141/155
+Match but INCORRECT: 2/155
+No data found: 12/155
 
 
 File: ../test/altered-easy/40__F_Left_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
 No data found
-Correct: 150/156
+Match & CORRECT: 141/156
+Match but INCORRECT: 2/156
+No data found: 13/156
 
 
 File: ../test/altered-easy/483__M_Left_little_finger_Obl.BMP
-0.8249619482496195
-0.8249619482496195
-Match
-Correct: 151/157
+0.8407557354925776
+Matched with ../test/real/483__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 142/157
+Match but INCORRECT: 2/157
+No data found: 13/157
 
 
 File: ../test/altered-easy/361__M_Left_index_finger_Zcut.BMP
-0.9403453689167975
-0.9403453689167975
-Match
-Correct: 152/158
+0.9484978540772532
+Matched with ../test/real/361__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 143/158
+Match but INCORRECT: 2/158
+No data found: 13/158
 
 
 File: ../test/altered-easy/286__M_Left_index_finger_Obl.BMP
 No data found so we use Levenshtein Distance
-0.8400000000000001
-Match
-Correct: 153/159
+0.8399999999999999
+Matched with ../test/real/286__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 144/159
+Match but INCORRECT: 2/159
+No data found: 13/159
 
 
 File: ../test/altered-easy/401__M_Left_little_finger_CR.BMP
-0.7610993657505285
-0.7610993657505285
-Match
-Correct: 154/160
+No data found so we use Levenshtein Distance
+No data found
+Match & CORRECT: 144/160
+Match but INCORRECT: 2/160
+No data found: 14/160
 
 
 File: ../test/altered-easy/139__M_Right_middle_finger_CR.BMP
-0.8629500580720093
-0.8629500580720093
-Match
-Correct: 155/161
+No data found so we use Levenshtein Distance
+0.8783068783068784
+Matched with ../test/real/139__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 145/161
+Match but INCORRECT: 2/161
+No data found: 14/161
 
 
 File: ../test/altered-easy/463__F_Right_middle_finger_Obl.BMP
-0.5336927223719676
-0.5336927223719676
-Match
-Correct: 156/162
+No data found so we use Levenshtein Distance
+0.5776173285198556
+Matched with ../test/real/463__F_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 146/162
+Match but INCORRECT: 2/162
+No data found: 14/162
 
 
 File: ../test/altered-easy/510__M_Right_thumb_finger_CR.BMP
-No data found so we use Levenshtein Distance
-No data found
-Correct: 157/163
+0.9080338266384778
+Matched with ../test/real/510__M_Right_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 147/163
+Match but INCORRECT: 2/163
+No data found: 14/163
 
 
 File: ../test/altered-easy/91__F_Right_ring_finger_Obl.BMP
 No data found so we use Levenshtein Distance
+0.847953216374269
+Matched with ../test/real/91__F_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 148/164
+Match but INCORRECT: 2/164
+No data found: 14/164
+
+
+File: ../test/altered-easy/469__M_Left_little_finger_Zcut.BMP
+No data found so we use Levenshtein Distance
+0.9573901464713716
+Matched with ../test/real/469__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 149/165
+Match but INCORRECT: 2/165
+No data found: 14/165
+
+
+File: ../test/altered-easy/147__M_Left_ring_finger_Zcut.BMP
+0.95
+Matched with ../test/real/147__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 150/166
+Match but INCORRECT: 2/166
+No data found: 14/166
+
+
+File: ../test/altered-easy/306__M_Right_index_finger_Obl.BMP
+0.9148936170212766
+Matched with ../test/real/306__M_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 151/167
+Match but INCORRECT: 2/167
+No data found: 14/167
+
+
+File: ../test/altered-easy/535__M_Right_ring_finger_Obl.BMP
+No data found so we use Levenshtein Distance
+0.8320000000000001
+Matched with ../test/real/535__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 152/168
+Match but INCORRECT: 2/168
+No data found: 14/168
+
+
+File: ../test/altered-easy/556__F_Left_index_finger_CR.BMP
+No data found so we use Levenshtein Distance
+No data found
+Match & CORRECT: 152/169
+Match but INCORRECT: 2/169
+No data found: 15/169
+
+
+File: ../test/altered-easy/527__M_Left_index_finger_CR.BMP
+No data found so we use Levenshtein Distance
+0.8079470198675497
+Matched with ../test/real/527__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 153/170
+Match but INCORRECT: 2/170
+No data found: 15/170
+
+
+File: ../test/altered-easy/469__M_Right_middle_finger_Zcut.BMP
+No data found so we use Levenshtein Distance
+0.961038961038961
+Matched with ../test/real/469__M_Right_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 154/171
+Match but INCORRECT: 2/171
+No data found: 15/171
+
+
+File: ../test/altered-easy/500__M_Left_ring_finger_Obl.BMP
+No data found so we use Levenshtein Distance
+0.72
+Matched with ../test/real/500__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 155/172
+Match but INCORRECT: 2/172
+No data found: 15/172
+
+
+File: ../test/altered-easy/468__F_Left_index_finger_Zcut.BMP
+0.9347553324968633
+Matched with ../test/real/468__F_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 156/173
+Match but INCORRECT: 2/173
+No data found: 15/173
+
+
+File: ../test/altered-easy/578__M_Right_ring_finger_Zcut.BMP
+No data found so we use Levenshtein Distance
+0.9488636363636364
+Matched with ../test/real/578__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 157/174
+Match but INCORRECT: 2/174
+No data found: 15/174
+
+
+File: ../test/altered-easy/483__M_Left_middle_finger_CR.BMP
+No data found so we use Levenshtein Distance
+0.8677462887989204
+Matched with ../test/real/483__M_Left_middle_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 158/175
+Match but INCORRECT: 2/175
+No data found: 15/175
+
+
+File: ../test/altered-easy/45__M_Left_ring_finger_Zcut.BMP
+No data found so we use Levenshtein Distance
+0.9674355495251018
+Matched with ../test/real/45__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 159/176
+Match but INCORRECT: 2/176
+No data found: 15/176
+
+
+File: ../test/altered-easy/558__M_Right_little_finger_Obl.BMP
+No data found so we use Levenshtein Distance
+No data found
+Match & CORRECT: 159/177
+Match but INCORRECT: 2/177
+No data found: 16/177
+
+
+File: ../test/altered-easy/412__M_Left_index_finger_Obl.BMP
+0.8761194029850746
+Matched with ../test/real/412__M_Left_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 160/178
+Match but INCORRECT: 2/178
+No data found: 16/178
+
+
+File: ../test/altered-easy/404__M_Left_ring_finger_CR.BMP
+No data found so we use Levenshtein Distance
+0.8797752808988764
+Matched with ../test/real/404__M_Left_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 161/179
+Match but INCORRECT: 2/179
+No data found: 16/179
+
+
+File: ../test/altered-easy/360__M_Right_little_finger_Obl.BMP
+No data found so we use Levenshtein Distance
+0.8679012345679012
+Matched with ../test/real/360__M_Right_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 162/180
+Match but INCORRECT: 2/180
+No data found: 16/180
+
+
+File: ../test/altered-easy/24__F_Right_index_finger_CR.BMP
+No data found so we use Levenshtein Distance
+0.8860435339308579
+Matched with ../test/real/24__F_Right_index_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 163/181
+Match but INCORRECT: 2/181
+No data found: 16/181
+
+
+File: ../test/altered-easy/371__M_Left_little_finger_CR.BMP
+0.8757309941520468
+Matched with ../test/real/371__M_Left_little_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 164/182
+Match but INCORRECT: 2/182
+No data found: 16/182
+
+
+File: ../test/altered-easy/30__F_Left_thumb_finger_CR.BMP
+No data found so we use Levenshtein Distance
+0.8721704394141145
+Matched with ../test/real/30__F_Left_thumb_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 165/183
+Match but INCORRECT: 2/183
+No data found: 16/183
+
+
+File: ../test/altered-easy/21__M_Right_ring_finger_Zcut.BMP
+0.9598965071151359
+Matched with ../test/real/21__M_Right_ring_finger.BMP
+Matched & CORRECT
+Match & CORRECT: 166/184
+Match but INCORRECT: 2/184
+No data found: 16/184
+
+
+File: ../test/altered-easy/342__M_Right_index_finger_CR.BMP
