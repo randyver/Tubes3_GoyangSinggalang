@@ -298,31 +298,8 @@ namespace Controllers
             // Get input image
             Image<Rgba32> inputImage = Image.Load<Rgba32>(inputImagePath);
 
-            // // print the grayscale image
-            // for (int y = 0; y < inputImage.Height; y++) {
-            //     for (int x = 0; x < inputImage.Width; x++) {
-            //         // grayscale
-            //         int gray = (int)(inputImage[x, y].R * 0.3 + inputImage[x, y].G * 0.59 + inputImage[x, y].B * 0.11);
-            //         int binary = gray > 127 ? 0 : 1;
-            //         Console.Write(binary);
-            //     }
-            //     Console.WriteLine();
-            // }
-
-            // Console.WriteLine("\n\n");
 
             inputImage = Lib.ImageConverter.OmitWhiteSpace(inputImage);
-
-            // print the grayscale image
-            // for (int y = 0; y < inputImage.Height; y++) {
-            //     for (int x = 0; x < inputImage.Width; x++) {
-            //         // grayscale
-            //         int gray = (int)(inputImage[x, y].R * 0.3 + inputImage[x, y].G * 0.59 + inputImage[x, y].B * 0.11);
-            //         int binary = gray > 127 ? 0 : 1;
-            //         Console.Write(binary);
-            //     }
-            //     Console.WriteLine();
-            // }
 
 
             string inputImageAsciiString = Lib.ImageConverter.ConvertToAscii8Bits(inputImage);
